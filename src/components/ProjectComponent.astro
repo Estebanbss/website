@@ -8,7 +8,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<div class="project min max-h-[140px] overflow-hidden w-full p-4 rounded-lg border dark:border-neutral-800 border-neutral-400 dark:text-white text-[#1F2937]">
+<div class="project min-h-[140px] max-h-[140px] overflow-hidden w-full p-4 rounded-lg border dark:border-neutral-800 border-neutral-400 dark:text-white text-[#1F2937]">
      <div class="flex flex-row items-center gap-2">
           <a href={data.web} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
                <h3 class="text-lg md:text-xl font-bold group-hover:opacity-50">{data.title}</h3>
@@ -77,12 +77,7 @@ const t = useTranslations(lang);
      }
 }
 
-.min {
-     
-     @media(min-width: 768px){
-          min-height: 140px;
-     }
-}
+
 </style>
 
 <script >

@@ -8,25 +8,25 @@ const t = useTranslations(lang);
 <header id="header" class="min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
 
      <nav id="nav" class="flex  flex-col sm:flex-row gap-x-5 gap-y-3 mb-2 sm:mb-0 sm:gap-y-0  text-base font-normal xl:max-w-[1150px] relative mx-auto w-full items-center justify-center">
-          <a href="/" aria-label="Main icon" id="mainIcon"   class="w-[36px] aspect-square rounded-full relative overflow-hidden hover:bg-black dark:hover:bg-white mt-4 sm:mt-0 hover:bg-opacity-5 dark:hover:bg-opacity-5   ">
-               <Icon name="icon"  class="text-[53px] absolute mt-[6px] dark:text-white text-gray-700"/>
+          <a href="/" aria-label="Main icon" id="mainIcon"   class="w-[48px] aspect-square mb-3  sm:mb-0 rounded-full relative overflow-hidden hover:bg-black dark:hover:bg-white mt-4 sm:mt-0 hover:bg-opacity-5 dark:hover:bg-opacity-5   ">
+               <Icon name="icon"  class="text-[71px] pointer-events-none absolute mt-[6px] dark:text-white text-gray-700"/>
           </a>
 
           
-          <div class="main   left-0 mx-auto flex flex-row gap-x-5  dark:text-white text-[#1F2937]">
-               <div id="list" class="flex p-1 px-4 flex-row gap-x-5 left-[50%] translate-y-[-50%] translate-x-[-50%] absolute font-semibold">
-                    <a id="projectsanchor" class="opacity-80 hover:opacity-100 transition  duration-75  hover:text-lime-500" href="#projects">{t("nav.projects")}</a>
-                    <a id="experienceanchor" class="opacity-80 hover:opacity-100 transition  duration-75  hover:text-lime-500" href="#experience">{t("nav.experience")}</a>
-                    <a id="aboutanchor" class="opacity-80 hover:opacity-100 transition duration-75 hover:text-lime-500" href="#about">{t("nav.about")}</a>
+          <div class="main relative  sm:static  left-0 mx-auto flex flex-row gap-x-5  dark:text-white text-[#1F2937]">
+               <div id="list" class="flex px-4 flex-row gap-x-5 left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] absolute font-semibold">
+                    <a id="projectsanchor" class="opacity-80 hover:opacity-100 transition  duration-75  hover:text-lime-500 p-1 min-h-[48px] sm:min-h-fit flex flex-row items-center" href="#projects">{t("nav.projects")}</a>
+                    <a id="experienceanchor" class="opacity-80 hover:opacity-100 transition  duration-75  hover:text-lime-500 p-1 min-h-[48px] sm:min-h-fit flex flex-row items-center" href="#experience">{t("nav.experience")}</a>
+                    <a id="aboutanchor" class="opacity-80 hover:opacity-100 transition  duration-75  hover:text-lime-500 p-1 min-h-[48px] sm:min-h-fit flex flex-row items-center" href="#about">{t("nav.about")}</a>
                </div>
 
           </div>
 
-          <div id="options" class="flex gap-2  items-center flex-row justify-center sm:border-l sm:border-black dark:border-white sm:border-opacity-30 dark:border-opacity-30 sm:pl-6">
-               <a aria-label="icon" class="" href="https://github.com/Estebanbss" target="_blank"><Icon name="mdi:github" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/></a>
-               <a  aria-label="icon"class="" href="https://www.linkedin.com/in/estebanbss/" target="_blank"><Icon name="mdi:linkedin" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 hover:text-blue-700 dark:hover:text-blue-700"/></a>
+          <div id="options" class="flex gap-2 mt-3 sm:mt-0 items-center flex-row justify-center sm:border-l sm:border-black dark:border-white sm:border-opacity-30 dark:border-opacity-30 sm:pl-6">
+               <a aria-label="icon" class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://github.com/Estebanbss" target="_blank"><Icon name="mdi:github" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/></a>
+               <a  aria-label="icon"class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://www.linkedin.com/in/estebanbss/" target="_blank"><Icon name="mdi:linkedin" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 hover:text-blue-700 dark:hover:text-blue-700"/></a>
 
-               <button aria-label="languageButton" class="relative flex flex-row justify-center items-center min-h-[24px] max-w-[24px] aspect-square" id="languageButton">
+               <button aria-label="languageButton" class="relative flex flex-row justify-center items-center min-h-[48px] sm:min-h-[32px] max-w-[48px] aspect-square" id="languageButton">
                     <span id="spanLang" class="text-[12px] w-[18px] h-[18px] absolute   rounded-sm opacity-50  text-[#1F2937] dark:text-white leading-[17.7px] font-black font-sans hover:opacity-100">{lang.toUpperCase()}</span>
                </button>
                <div id="alertLanguage" class="border absolute hidden w-full max-w-[90px]  min-h-[100px] s flex-col top-[112px]  sm:top-[55px] opacity-90">
@@ -40,7 +40,8 @@ const t = useTranslations(lang);
                          Français
                     </button>
                </div>
-               <button aria-label="buttonTheme" class="hover:scale-125" id=themeButton>
+               <button aria-label="buttonTheme" class="hover:scale-125 min-w-[48px] sm:min-w-[32px] aspect-square
+               flex justify-center items-center" id=themeButton>
                     <Icon id=IconThemeSun name="ph:sun" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
                     <Icon id=IconThemeMoon name="ph:moon" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
                </button>
