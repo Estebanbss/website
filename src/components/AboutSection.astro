@@ -1,0 +1,23 @@
+---
+import TechSection from "./TechSection.astro";
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div id="about" class="w-full flex flex-col gap-2 mb-10 sm:my-10">
+     
+     <div class="flex flex-col md:flex-row gap-4">
+          
+          <h2 class="text-4xl md:text-6xl font-black dark:text-lime-500 text-center text-lime-600 px-5 md:w-[40%]">{t("a.sectionTitle")}</h2>
+          <div class="text-lg md:w-[60%] px-12 dark:text-white text-black flex flex-col gap-2">
+               <p class="">{t("a.p1")}<strong class="text-lime-700 dark:text-lime-500 font-black">{t("a.p2")}</strong>{t("a.p3")}
+               </p>
+               <p class="">
+                    {t("a.p4")}
+               </p>
+          </div>
+          
+     </div>
+     <TechSection />
+</div>

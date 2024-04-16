@@ -1,0 +1,25 @@
+---
+import { jobs } from '../data/jobs';
+import type { Job } from '../types/job';
+import JobComponent from './JobComponent.astro';
+import TitleComponent from './TitleComponent.astro';
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div id="experience" class="w-full flex flex-col gap-2 mb-10 sm:my-10">
+     <TitleComponent title={t("e.sectionTitle")} icon="ph:bag-bold" />
+     <div class="w-full">
+          {
+               jobs.map(
+                
+                    (job:Job, index:number)=>(
+                    
+                    <JobComponent data={job} index={index} />
+                    
+                    )
+               )
+          }
+     </div>
+</div>

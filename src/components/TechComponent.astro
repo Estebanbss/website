@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+const {title} = Astro.props;
+const {icon} = Astro.props;
+
+---
+
+<div class="min-w-full md:min-w-44 min-h-28 border dark:border-neutral-700 border-neutral-300 rounded-lg p-4 flex flex-col">
+     <div class="flex items-center justify-center">
+          <Icon name={icon} class="w-[50px] aspect-square text-5xl text-gray-500" />
+          {
+               title === "Astro" ?
+               <Icon id="iconToLight" name="vscode-icons:file-type-light-astro" class="text-5xl aspect-square w-[50px] hidden" />
+           : null}
+     </div>
+     <div class="mt-4 text-center">
+          <h3 class="text-lg font-semibold dark:text-white text-[#1F2937]">{title}</h3>
+     </div>
+</div>
+
+

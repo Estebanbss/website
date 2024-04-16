@@ -1,0 +1,115 @@
+---
+import { techs,techsIcons } from "../data/technologies";
+import type { Project } from "../types/project";
+import { Icon } from 'astro-icon/components'
+const {data} = Astro.props as {data: Project};
+const {index} = Astro.props as {index: number};
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="project min max-h-[140px] overflow-hidden w-full p-4 rounded-lg border dark:border-neutral-800 border-neutral-400 dark:text-white text-[#1F2937]">
+     <div class="flex flex-row items-center gap-2">
+          <a href={data.web} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
+               <h3 class="text-lg md:text-xl font-bold group-hover:opacity-50">{data.title}</h3>
+               <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px]  transition-transform duration-200 opacity-50"/>
+          </a>
+          <div class="ml-auto flex flex-row gap-3">
+               {
+                    data.api !== undefined && data.api !== ""&& data.api !== null ? (
+                         <a aria-label="api url" href={data.api} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
+                              <Icon name="mdi:api" class="dark:text-white opacity-50 hover:opacity-100 text-2xl"/>
+                         </a>
+                    ) : null 
+               }
+
+               <a aria-label="github url" href={data.url} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
+                    <Icon name="mdi:github" class="dark:text-white opacity-50 hover:opacity-100 text-2xl"/>
+               </a>
+          </div>
+     </div>
+     <p class="dark:text-neutral-400">{data?.description?.[lang]}</p>
+     <div class="w-full scroll flex flex-row gap-2 mt-2">
+          {data?.topics?.map((topic, index) => (
+            <span  class="p-1 px-2  flex flex-row min-w-fit gap-1 border dark:border-neutral-800 border-neutral-400">
+              {
+               Object.values(techs).findIndex(value => value === topic) === undefined ||
+               Object.values(techs).findIndex(value => value === topic) === -1  ?
+               null :
+                <Icon id="icon" name={
+                    techsIcons[Object.values(techs).findIndex(value => value === topic)+1][1] === undefined ?
+                    null : techsIcons[Object.values(techs).findIndex(value => value === topic)+1][1]
+                    
+                } class="text-2xl text-opacity-50 dark:text-white text-[#1F2937]" />
+               }
+                
+                {
+                    topic === "Astro" ?
+                    <Icon id="iconToLight" name="vscode-icons:file-type-light-astro" class="text-2xl text-opacity-50 hidden" />
+                : null}
+
+             <span class="select-none">{topic}</span>
+            </span>
+          ))}
+     </div>
+</div>    
+
+<style>
+
+.scroll{
+     overflow-x: auto;
+     overflow-y: hidden;
+     scrollbar-width: none;
+     -ms-overflow-style: none;
+
+     &:hover {
+          scrollbar-width: thin;
+          -ms-overflow-style: auto;
+     }
+
+     &::-webkit-scrollbar {
+          display: none;
+     }
+
+     &:hover::-webkit-scrollbar-thumb {
+          background-color: transparent;
+          border-radius: 6px;
+     }
+}
+
+.min {
+     
+     @media(min-width: 768px){
+          min-height: 140px;
+     }
+}
+</style>
+
+<script >
+     var elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
+     var elementosIcon2 = document.querySelectorAll('#iconToLight');
+     var themeC = localStorage.getItem('theme') 
+
+     if(themeC === "dark"){
+          elementosIcon1.forEach(element => {
+               element.classList.add('hidden');
+               element.classList.remove('block')
+          });
+          elementosIcon2.forEach(element => {
+               element.classList.remove('hidden');
+               element.classList.add('block')
+          });
+
+     }else{
+
+          elementosIcon1.forEach(element => {
+               element.classList.remove('hidden');
+               element.classList.add('block')
+          });
+          elementosIcon2.forEach(element => {
+               element.classList.add('hidden');
+               element.classList.remove('block')
+          });
+     }    
+
+</script>

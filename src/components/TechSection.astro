@@ -1,0 +1,21 @@
+---
+import TechComponent from "./TechComponent.astro";
+import { techsIcons } from "../data/technologies";
+import { techs } from "../data/technologies";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="flex flex-col my-10" id="technologies">
+
+     <h3 class="text-3xl px-5 dark:text-white text-[#1F2937] font-bold">{t("t.sectionTitle")}</h3>
+
+     <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-4 my-5">
+          {
+               Object.entries(techs).map(([key, value]) => (
+               <TechComponent title={value} icon={techsIcons[Number(key)][2]} />
+               ))
+          }
+     </div>
+
+</div>
