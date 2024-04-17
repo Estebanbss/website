@@ -13,12 +13,10 @@ const t = useTranslations(lang);
      <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-4 my-5">
           {
                Object.entries(techs)
-               .filter(([value]) => value !== "API RestFul" && value !== "Minimal API")
-               .map(([key, value]) => (
-
-               <TechComponent title={value} icon={techsIcons[Number(key)][2]} />
-               ))
-          }
+                   .slice(0, -2) // Elimina los dos últimos elementos del array
+                   .map(([key, value]) => (
+                       <TechComponent key={key} title={value} icon={techsIcons[Number(key)][2]} />
+                   ))
+           }
      </div>
-
 </div>

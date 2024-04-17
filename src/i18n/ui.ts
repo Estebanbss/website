@@ -21,7 +21,7 @@ export const ui = {
      "t.sectionTitle":"Technologies",
      "f.message":"If you think I'd be a good fit for your next project, please send me an email.",
      "link.cv": "https://drive.google.com/file/d/1W1c5wMeKC0w7r-W-xoKyuJPySc2guPjy/view?usp=sharing",
-     
+     "UxUi": "UX/UI,",
      },
 
      es:{
@@ -45,6 +45,7 @@ export const ui = {
      "t.sectionTitle":"Tecnologías",
      "f.message":"Si crees que encajaría bien en tu próximo proyecto, por favor envíame un correo electrónico.",
      "link.cv": "https://drive.google.com/file/d/1ypkmvNxf4ZNEo4kBh01O38uD539V-2ca/view?usp=sharing",
+     "UxUi": "UX/UI,",
      },
 
      fr:{
@@ -68,6 +69,7 @@ export const ui = {
      "t.sectionTitle":"Technologies",
      "f.message":"Si vous pensez que je serais un bon choix pour votre prochain projet, veuillez m'envoyer un e-mail.",
      "link.cv": "https://drive.google.com/file/d/1W1c5wMeKC0w7r-W-xoKyuJPySc2guPjy/view?usp=sharing",
+     "UxUi": "UX/UI,",
      }
 
 } as const;
