@@ -13,7 +13,7 @@ export const projects: Project[] = [
           url: "https://github.com/Estebanbss/mini-trello",
           web: "https://estebanbss.github.io/mini-trello",
           api: "https://github.com/Estebanbss/trello-clone-api",
-          topics: [techs[1], techs[2], techs[3], 'API RestFul', techs[4], techs[5], techs[6]],
+          topics: [techs[1], techs[3], techs[4], techs[11], techs[5], techs[6], techs[7]],
           team: ["Estebanbss"],
      },
 
@@ -27,7 +27,7 @@ export const projects: Project[] = [
           url: "https://github.com/Estebanbss/paroot-url",
           web: "https://estebanbss.github.io/paroot-url/",
           api: "https://github.com/Estebanbss/paroot-api",
-          topics: [techs[1], techs[2], techs[3], 'Minimal API', techs[4], techs[5], techs[6]],
+          topics: [techs[1], techs[3], techs[4], techs[12], techs[4], techs[5], techs[6]],
           team: ["Estebanbss"],
      },
 
@@ -40,7 +40,7 @@ export const projects: Project[] = [
           },
           url: "https://github.com/Estebanbss/web-palhuila",
           web: "https://www.palhuila.com/",
-          topics: [techs[1], techs[2], techs[3], techs[7]],
+          topics: [techs[1], techs[3], techs[4], techs[9]],
           team: ["Estebanbss","Sanvargas02"],
      },
 
@@ -54,7 +54,7 @@ export const projects: Project[] = [
           },
           url: "https://github.com/Estebanbss/landing-palhuila",
           web:"https://estebanbss.github.io/landing-palhuila/",
-          topics: [techs[8],techs[2],techs[3]],
+          topics: [techs[10],techs[3],techs[4]],
           team: ["Estebanbss"],
      },
 

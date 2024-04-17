@@ -1,0 +1,102 @@
+---
+import { Icon } from "astro-icon/components"
+
+const THEMES = ["Light", "Dark"]
+---
+
+<button aria-label="buttonTheme" class="hover:scale-125 min-w-[48px] sm:min-w-[32px] aspect-square flex justify-center items-center" id=themeButton>
+                    <Icon id=IconThemeSun name="ph:sun" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
+                    <Icon id=IconThemeMoon name="ph:moon" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
+</button>
+
+<script is:inline>
+  let remove = null
+  const THEMES = ["light", "dark"];
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+  const themeButton = document.getElementById('themeButton');
+  const iconThemeSun = document.getElementById('IconThemeSun');
+  const iconThemeMoon = document.getElementById('IconThemeMoon');
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "system"
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
+  }
+
+  const updateIcon = (themePreference) => {
+    if (themePreference === "dark") {
+        iconThemeSun.style.display = 'none';
+        iconThemeMoon.style.display = 'block';
+
+            handleDarkAstroIcons(themePreference);
+
+    } else {
+        iconThemeSun.style.display = 'block';
+        iconThemeMoon.style.display = 'none';
+
+          handleLightAstroIcons(themePreference);
+    }
+}
+
+  
+  const handleLightAstroIcons = (theme) => {
+     const elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
+     const elementosIcon2 = document.querySelectorAll('#iconToLight');
+     
+     elementosIcon1.forEach(element => {
+          element.style.display = 'none';
+     });
+     elementosIcon2.forEach(element => {
+          element.style.display = 'block';
+     });
+  }
+
+const handleDarkAstroIcons = (theme) => {
+      const elementosIcon1 = document.querySelectorAll('#iconToDark');
+      const elementosIcon2 = document.querySelectorAll('#iconToLight');
+      
+      elementosIcon1.forEach(element => {
+               element.style.display = 'block';
+      });
+      elementosIcon2.forEach(element => {
+               element.style.display = 'none';
+      });
+}
+
+  const updateTheme = () => {
+    if (remove != null) {
+        remove()
+    }
+    matchMedia.addEventListener("change", updateTheme)
+    remove = () => {
+        matchMedia.removeEventListener("change", updateTheme)
+    }
+
+    const themePreference = getThemePreference().toLowerCase();
+    const isDark =
+        themePreference === "dark" ||
+        (themePreference === "system" && matchMedia.matches)
+
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    
+
+    updateIcon(themePreference)
+}
+
+updateTheme()
+
+  themeButton.addEventListener("click", () => {
+    const themePreference = getThemePreference().toLowerCase(); // 
+    const newTheme = THEMES[(THEMES.indexOf(themePreference) + 1) % THEMES.length];
+    localStorage.setItem("theme", newTheme);
+    updateTheme();
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  updateTheme();
+});
+
+</script>

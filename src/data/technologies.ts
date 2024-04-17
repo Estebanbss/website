@@ -2,23 +2,31 @@ import type { TechIcons } from "../types/techIcons";
 
 export const techs: { [key: number]: string } = {
      1: "Angular",
-     2: "TypeScript",
-     3: "Tailwind CSS",
-     4: "C#",
-     5: "ASP.NET Core",
-     6: "SQL Server",
-     7: "Firebase",
-     8: "Astro",
+     2: "JavaScript",
+     3: "TypeScript",
+     4: "Tailwind CSS",
+     5: "C#",
+     6: "ASP.NET Core",
+     7: "SQL Server",
+     8: "Git",
+     9: "Firebase",
+     10: "Astro",
+     11: "API RestFul",
+     12: "Minimal API"
  };
-
-
-export const techsIcons: TechIcons = {
-    1: { 1: "mdi:angular", 2:"vscode-icons:file-type-angular"  },
-    2: { 1: "mdi:language-typescript", 2:"vscode-icons:file-type-typescript-official"},
-    3: { 1: "mdi:tailwind", 2:"vscode-icons:file-type-tailwind"},
-    4: { 1: "mdi:language-csharp", 2:"vscode-icons:file-type-csharp2"},
-    5: { 1: "mdi:dot-net", 2:"mdi:dot-net"},
-    6: { 1: "ph:file-sql", 2:"vscode-icons:file-type-sql"},
-    7: { 1: "mdi:firebase", 2:"vscode-icons:file-type-firebase"},
-    8: { 1: "vscode-icons:file-type-astro", 2:"vscode-icons:file-type-astro"}
-};
+ 
+ export const techsIcons: TechIcons = {
+     1: { 1: "mdi:angular", 2: "vscode-icons:file-type-angular" },
+     2: { 1: "mdi:language-javascript", 2: "vscode-icons:file-type-js-official" },
+     3: { 1: "mdi:language-typescript", 2: "vscode-icons:file-type-typescript-official" },
+     4: { 1: "mdi:tailwind", 2: "vscode-icons:file-type-tailwind" },
+     5: { 1: "mdi:language-csharp", 2: "vscode-icons:file-type-csharp2" },
+     6: { 1: "mdi:dot-net", 2: "mdi:dot-net" },
+     7: { 1: "ph:file-sql", 2: "vscode-icons:file-type-sql" },
+     8: { 1: "mdi:git", 2: "vscode-icons:file-type-git" },
+     9: { 1: "mdi:firebase", 2: "vscode-icons:file-type-firebase" },
+     10: { 1: "vscode-icons:file-type-astro", 2: "vscode-icons:file-type-astro" },
+     11: { 1: "mdi:api", 2: "mdi:api" },
+     12: { 1: "mdi:api", 2: "mdi:api" }
+ };
+ 

@@ -1,14 +1,16 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import ThemeTogggle from './ThemeTogggle.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const href = lang === 'es' ? '/' : `/${lang}`; 
 ---
 
 <header id="header" class="min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
 
      <nav id="nav" class="flex  flex-col sm:flex-row gap-x-5 gap-y-3 mb-2 sm:mb-0 sm:gap-y-0  text-base font-normal xl:max-w-[1150px] relative mx-auto w-full items-center justify-center">
-          <a href="/" aria-label="Main icon" id="mainIcon"   class="w-[48px] aspect-square mb-3  sm:mb-0 rounded-full relative overflow-hidden hover:bg-black dark:hover:bg-white mt-4 sm:mt-0 hover:bg-opacity-5 dark:hover:bg-opacity-5   ">
+          <a href={href} aria-label="Main icon" id="mainIcon"   class="w-[48px] aspect-square mb-3  sm:mb-0 rounded-full relative overflow-hidden hover:bg-black dark:hover:bg-white mt-4 sm:mt-0 hover:bg-opacity-5 dark:hover:bg-opacity-5   ">
                <Icon name="icon"  class="text-[71px] pointer-events-none absolute mt-[6px] dark:text-white text-gray-700"/>
           </a>
 
@@ -22,14 +24,14 @@ const t = useTranslations(lang);
 
           </div>
 
-          <div id="options" class="flex gap-2 mt-3 sm:mt-0 items-center flex-row justify-center sm:border-l sm:border-black dark:border-white sm:border-opacity-30 dark:border-opacity-30 sm:pl-6">
+          <div id="options" class="flex gap-2 mt-3 sm:mt-0 items-center flex-row justify-center sm:border-l sm:border-black dark:border-white sm:border-opacity-30 dark:border-opacity-30 sm:pl-4">
                <a aria-label="icon" class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://github.com/Estebanbss" target="_blank"><Icon name="mdi:github" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/></a>
                <a  aria-label="icon"class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://www.linkedin.com/in/estebanbss/" target="_blank"><Icon name="mdi:linkedin" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 hover:text-blue-700 dark:hover:text-blue-700"/></a>
 
                <button aria-label="languageButton" class="relative flex flex-row justify-center items-center min-h-[48px] sm:min-h-[32px] max-w-[48px] aspect-square" id="languageButton">
                     <span id="spanLang" class="text-[12px] w-[18px] h-[18px] absolute   rounded-sm opacity-50  text-[#1F2937] dark:text-white leading-[17.7px] font-black font-sans hover:opacity-100">{lang.toUpperCase()}</span>
                </button>
-               <div id="alertLanguage" class="border absolute hidden w-full max-w-[90px]  min-h-[100px] s flex-col top-[112px]  sm:top-[55px] opacity-90">
+               <div id="alertLanguage" class="border absolute hidden w-full max-w-[90px]  min-h-[100px]  flex-col top-[167px]  sm:top-[60px] opacity-90">
                     <button id="enButton" class="w-full p-1 dark:text-white  text-[#1F2937] font-bold border bg-white dark:bg-[#1F2937] opacity-100 px-4">
                          English
                     </button>
@@ -40,224 +42,127 @@ const t = useTranslations(lang);
                          Français
                     </button>
                </div>
-               <button aria-label="buttonTheme" class="hover:scale-125 min-w-[48px] sm:min-w-[32px] aspect-square
-               flex justify-center items-center" id=themeButton>
-                    <Icon id=IconThemeSun name="ph:sun" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
-                    <Icon id=IconThemeMoon name="ph:moon" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
-               </button>
-
+               
+               <ThemeTogggle/>
           </div>
      </nav>
 
 </header>
-
+ 
 <script async>
-const themeButton = document.getElementById('themeButton');
-const iconThemeSun = document.getElementById('IconThemeSun');
-const iconThemeMoon = document.getElementById('IconThemeMoon');
-const header = document.getElementById('header');
-const mainIcon = document.getElementById('mainIcon');
-const options = document.getElementById('options');
-const nav = document.getElementById('nav');
-const list = document.getElementById('list');
-const theme = localStorage.getItem('theme');
-const languageButton = document.getElementById('languageButton');
-const enButton = document.getElementById('enButton');
-const esButton = document.getElementById('esButton');
-const frButton = document.getElementById('frButton');
-const spanLang = document.getElementById('spanLang');
-let change = false;
 
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const mainIcon = document.getElementById('mainIcon');
+    const options = document.getElementById('options');
+    const nav = document.getElementById('nav');
+    const list = document.getElementById('list');
+    const languageButton = document.getElementById('languageButton');
+    const enButton = document.getElementById('enButton');
+    const esButton = document.getElementById('esButton');
+    const frButton = document.getElementById('frButton');
+    const alertLanguage = document.getElementById('alertLanguage');
+    const projectsDiv = document.getElementById('projects');
+    const projectsAnchor = document.getElementById('projectsanchor');
+    const experienceDiv = document.getElementById('experience');
+    const experienceAnchor = document.getElementById('experienceanchor');
+    const aboutDiv = document.getElementById('about');
+    const aboutAnchor = document.getElementById('aboutanchor');
 
-    const theme = localStorage.getItem('theme');
-     const projectsdiv = document.getElementById('projects');
-     const projectsanchor = document.getElementById('projectsanchor');
-     const experiencediv = document.getElementById('experience');
-     const experienceanchor = document.getElementById('experienceanchor');
-     const aboutdiv = document.getElementById('about');
-     const aboutanchor = document.getElementById('aboutanchor');
-    
-     if (theme !== null) {
-          updateTheme(theme)
-          if(theme === "dark"){
-               changeIconToLight(2)
-          }else{
-               
-               changeIconToDark(2)
-          }
-     } else {
-     if(systemTheme === "dark"){
-               changeIconToLight(2)
-          }else{
-               changeIconToDark(2)
-          }
-     } 
+    let change = false;
+    function toggleLanguageAlert() {
+        alertLanguage.classList.toggle('hidden');
+        alertLanguage.classList.toggle('flex');
+    }
 
-     window.addEventListener('scroll', function() {
-          
-          if(window.scrollY < projectsdiv?.offsetTop){
-               projectsanchor.classList.remove('text-lime-500')
-               experienceanchor.classList.remove('text-lime-500')
-               aboutanchor.classList.remove('text-lime-500')
-          }
-
-          if (window.scrollY >= projectsdiv?.offsetTop-300) {
-               projectsanchor.classList.add('text-lime-500')
-               experienceanchor.classList.remove('text-lime-500')
-               aboutanchor.classList.remove('text-lime-500')
-          }
-          if (window.scrollY >= experiencediv?.offsetTop-300){
-               projectsanchor.classList.remove('text-lime-500')
-               experienceanchor.classList.add('text-lime-500')
-               aboutanchor.classList.remove('text-lime-500')
-          }
-
-          if (window.scrollY >= aboutdiv?.offsetTop-300){
-               projectsanchor.classList.remove('text-lime-500')
-               experienceanchor.classList.remove('text-lime-500')
-               aboutanchor.classList.add('text-lime-500')
-          }
-     });
-});
-
-document.addEventListener(
-     'click',
-     function(event){
-          if(event.target !== languageButton && event.target !== enButton && event.target !== esButton && event.target !== frButton && event.target !== spanLang){
-               alertLanguage.classList.add('hidden')
-               alertLanguage.classList.remove('flex')
-          }
-     }
-)
-
-document.addEventListener(
-     'keydown',
-     function(event){
-          if(event.key === "Escape"){
-               alertLanguage.classList.add('hidden')
-               alertLanguage.classList.remove('flex')
-          }
-     }
-)
-languageButton.addEventListener('click', function(){
-     const alertLanguage = document.getElementById('alertLanguage');
-     alertLanguage.classList.toggle('hidden')
-     alertLanguage.classList.toggle('flex')
-})
-
-enButton.addEventListener('click', function(){
-     window.location.href = "/en"
-})
-
-esButton.addEventListener('click', function(){
-     window.location.href = "/es"
-})
-
-frButton.addEventListener('click', function(){
-     window.location.href = "/fr"
-})
+    function changeLanguage(lang) {
+        if(lang === 'es'){
+               window.location.href = '/'; 
+        }else{
+          window.location.href = '/' + lang;
+        }
+    }
 
 
-function changeIconToDark(option){
-     if(option === 1){
-     iconThemeSun.classList.add('hidden')
-     iconThemeSun.classList.remove('block')
-     iconThemeMoon.classList.add('block')
-     iconThemeMoon.classList.remove('hidden')
-     }else{
+    function highlightNavLink(anchor, div) {
+        if (window.scrollY >= div.offsetTop - 300) {
+            projectsAnchor.classList.remove('text-lime-500');
+            experienceAnchor.classList.remove('text-lime-500');
+            aboutAnchor.classList.remove('text-lime-500');
+            anchor.classList.add('text-lime-500');
+        } else {
+            anchor.classList.remove('text-lime-500');
+        }
+    }
 
-          var elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
-          var elementosIcon2 = document.querySelectorAll('#iconToLight');
-
-          elementosIcon1.forEach(element => {
-               element.classList.add('hidden');
-               element.classList.remove('block')
-          });
-          elementosIcon2.forEach(element => {
-               element.classList.remove('hidden');
-               element.classList.add('block')
-          });
-     }
-}
-
-function changeIconToLight(option){
-     if(option === 1){
-     iconThemeSun.classList.add('block')
-     iconThemeSun.classList.remove('hidden')
-     iconThemeMoon.classList.add('hidden')
-     iconThemeMoon.classList.remove('block')
-     }else{
-          var elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
-          var elementosIcon2 = document.querySelectorAll('#iconToLight');
-
-          elementosIcon1.forEach(element => {
-               element.classList.remove('hidden');
-               element.classList.add('block')
-          });
-          elementosIcon2.forEach(element => {
-               element.classList.add('hidden');
-               element.classList.remove('block')
-          });
-     }
-}
-
-
-if (theme !== null) {
-          updateTheme(theme)
-          if(theme === "dark"){
-               changeIconToDark(1)
-          }else{
-               changeIconToLight(1)
-          }
-     } else {
-     if(systemTheme === "dark"){
-               changeIconToDark(1)
-          }else{
-               changeIconToLight(1)
-          }
-     }     
-
-function updateTheme(value){
-          document.documentElement.classList.remove("light", "dark")
-          document.documentElement.classList.add(value)
-          localStorage.setItem('theme', value)
-     }
-
-
-themeButton.addEventListener(
-     'click',
-     ()=>{
-          if(document.documentElement.classList.contains('dark')){
-               updateTheme('light')
-               changeIconToDark(1)
-               changeIconToDark(2)
-          }else{
-               updateTheme('dark')
-               changeIconToLight(1)
-               changeIconToLight(2)
-          }
-     }
-  )
-
-window.addEventListener('scroll', function() {
-     header.offsetHeight / 2 + 'px'
+    function handleScroll() {
         if (window.scrollY > header.offsetHeight && !change) {
-               mainIcon.classList.add('hidden');
+          console.log("hi")
+          mainIcon.classList.add('hidden');
                options.classList.add('hidden');
                nav.classList.remove('relative')
                nav.classList.add('fixed','translate-x-[-50%]','top-5','left-1/2')
                list.classList.add('border','rounded-sm','bg-white','bg-opacity-50','backdrop-blur-xl','rounded-lg')
                change = true;
-        }
-
-        if (window.scrollY < header.offsetHeight && change) {
+        } else if (window.scrollY < header.offsetHeight && change) {
+               console.log("bye")
                mainIcon.classList.remove('hidden');
                options.classList.remove('hidden');
                nav.classList.remove('fixed','translate-x-[-50%]', 'top-5','left-1/2','translate-x-[-50%]')
                nav.classList.add('relative')
                list.classList.remove('border','rounded-sm','bg-white','bg-opacity-50','backdrop-blur-xl','rounded-lg')
                change = false;
-          }          
-    });
+        }
+    }
+
+
+    function handleDocumentClick(event) {
+        if (![languageButton, enButton, esButton, frButton, spanLang].includes(event.target)) {
+            alertLanguage.classList.add('hidden');
+            alertLanguage.classList.remove('flex');
+        }
+    }
+
+    function handleKeyDown(event) {
+        if (event.key === 'Escape') {
+            alertLanguage.classList.add('hidden');
+            alertLanguage.classList.remove('flex');
+        }
+    }
+
+    function handleLanguageButtonClick() {
+        toggleLanguageAlert();
+    }
+
+    function handleLanguageButton(lang) {
+        return function() {
+            changeLanguage(lang);
+        };
+    }
+
+    function handleWindowScroll() {
+        highlightNavLink(projectsAnchor, projectsDiv);
+        highlightNavLink(experienceAnchor, experienceDiv);
+        highlightNavLink(aboutAnchor, aboutDiv);
+    }
+
+
+
+    // Event listeners
+
+    languageButton.addEventListener('click', handleLanguageButtonClick);
+    enButton.addEventListener('click', handleLanguageButton('en'));
+    esButton.addEventListener('click', handleLanguageButton('es'));
+    frButton.addEventListener('click', handleLanguageButton('fr'));
+    document.addEventListener('click', handleDocumentClick);
+    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleWindowScroll);
+    // Initial setup
+
+
+    handleScroll()
+});
+
+
 </script>

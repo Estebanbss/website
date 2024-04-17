@@ -38,67 +38,46 @@ const t = useTranslations(lang);
 </div>
 
 <script async>
-     
-     const projects = document.querySelectorAll('.project');
-     const next = document.querySelector('.next');
-     const previous = document.querySelector('.previous');
-     let index = 0;
+    const projects = document.querySelectorAll('.project');
+    const next = document.querySelector('.next');
+    const previous = document.querySelector('.previous');
+    let index = 0;
 
-     function chekingButtons(){
-          if(index == 0){
-               previous?.classList.add('disabled');
-               previous?.classList.add('opacity-50');
-               previous?.classList.add('cursor-default');
-          }else{
-               previous?.classList.remove('disabled');
-               previous?.classList.remove('opacity-50');
-               previous?.classList.remove('cursor-default');
-          }
-          if(index >= projects.length - 6){
-               next?.classList.add('disabled');
-               next?.classList.add('opacity-50');
-               next?.classList.add('cursor-default');
-          }else{
-               next?.classList.remove('disabled');
-               next?.classList.remove('opacity-50');
-               next?.classList.remove('cursor-default');
-          }
-     }
-     chekingButtons();
-     next?.addEventListener('click', () => {
-          console.log(index)
-          if(index < projects.length - 6){
-               index++;
-               projects.forEach((project, i) => {
-                    if(i >= index && i < index + 6){
-                         project.style.display = 'block';
-                    }else{
-                         project.style.display = 'none';
-                    }
-               });
-          }
-          chekingButtons();
-     });
+    function updateButtons() {
+        previous?.classList?.toggle('disabled', index === 0);
+        previous?.classList?.toggle('opacity-50', index === 0);
+        previous?.classList?.toggle('cursor-default', index === 0);
 
-     previous?.addEventListener('click', () => {
-          if(index > 0){
-               index--;
-               projects.forEach((project, i) => {
-                    if(i >= index && i < index + 6){
-                         project.style.display = 'block';
-                    }else{
-                         project.style.display = 'none';
-                    }
-               });
-          }
-          chekingButtons();
-     });
+        next?.classList?.toggle('disabled', index >= projects.length - 6);
+        next?.classList?.toggle('opacity-50', index >= projects.length - 6);
+        next?.classList?.toggle('cursor-default', index >= projects.length - 6);
+    }
 
-     projects.forEach((project, i) => {
-          if(i >= index && i < index + 6){
-               project.style.display = 'block';
-          }else{
-               project.style.display = 'none';
-          }
-     });
- </script>
+    function updateProjects() {
+        projects.forEach((project, i) => {
+            project.style.display = (i >= index && i < index + 6) ? 'block' : 'none';
+        });
+    }
+
+    function nextHandler() {
+        if (index < projects.length - 6) {
+            index++;
+            updateProjects();
+            updateButtons();
+        }
+    }
+
+    function previousHandler() {
+        if (index > 0) {
+            index--;
+            updateProjects();
+            updateButtons();
+        }
+    }
+
+    next?.addEventListener('click', nextHandler);
+    previous?.addEventListener('click', previousHandler);
+
+    updateProjects();
+    updateButtons();
+</script>

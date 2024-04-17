@@ -5,12 +5,21 @@ const {icon} = Astro.props;
 
 ---
 
-<div class="min-w-full md:min-w-44 min-h-28 border dark:border-neutral-700 border-neutral-300 rounded-lg p-4 flex flex-col">
-     <div class="flex items-center justify-center">
+<div class="min-w-full md:min-w-44 min-h-s28 border dark:border-neutral-700 border-neutral-300 rounded-lg p-4 flex flex-col">
+     <div class="flex min-w-[50px] items-center justify-center">
+          {
+               title !== "Astro" ?
           <Icon name={icon} class="w-[50px] aspect-square text-5xl text-gray-500" />
+          : null
+          }
+          
           {
                title === "Astro" ?
-               <Icon id="iconToLight" name="vscode-icons:file-type-light-astro" class="text-5xl aspect-square w-[50px] hidden" />
+               <Icon id="iconToDark" name="vscode-icons:file-type-astro" class="text-5xl aspect-square w-[50px]" />
+           : null}
+          {
+               title === "Astro" ?
+               <Icon id="iconToLight" name="vscode-icons:file-type-light-astro" class="text-5xl aspect-square w-[50px]" />
            : null}
      </div>
      <div class="mt-4 text-center">

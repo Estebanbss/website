@@ -32,9 +32,11 @@ const t = useTranslations(lang);
      <div class="w-full scroll flex flex-row gap-2 mt-2">
           {data?.topics?.map((topic, index) => (
             <span  class="p-1 px-2  flex flex-row min-w-fit gap-1 border dark:border-neutral-800 border-neutral-400">
-              {
+               <span class="min-w-[24px] aspect-square">
+                    {
                Object.values(techs).findIndex(value => value === topic) === undefined ||
-               Object.values(techs).findIndex(value => value === topic) === -1  ?
+               Object.values(techs).findIndex(value => value === topic) === -1 ||
+               topic === 'Astro' ?
                null :
                 <Icon id="icon" name={
                     techsIcons[Object.values(techs).findIndex(value => value === topic)+1][1] === undefined ?
@@ -42,12 +44,18 @@ const t = useTranslations(lang);
                     
                 } class="text-2xl text-opacity-50 dark:text-white text-[#1F2937]" />
                }
+               {
+                    topic === "Astro" ?
+                    <Icon id="iconToDark" name="vscode-icons:file-type-astro" class="text-2xl text-opacity-50 hidden" />
+                : null}
                 
                 {
                     topic === "Astro" ?
                     <Icon id="iconToLight" name="vscode-icons:file-type-light-astro" class="text-2xl text-opacity-50 hidden" />
                 : null}
 
+               </span>
+           
              <span class="select-none">{topic}</span>
             </span>
           ))}
@@ -59,52 +67,28 @@ const t = useTranslations(lang);
 .scroll{
      overflow-x: auto;
      overflow-y: hidden;
-     scrollbar-width: none;
-     -ms-overflow-style: none;
 
-     &:hover {
-          scrollbar-width: thin;
-          -ms-overflow-style: auto;
+
+     /* custom scrollbar */
+     ::-webkit-scrollbar {
+     width: 20px;
      }
 
-     &::-webkit-scrollbar {
-          display: none;
+     ::-webkit-scrollbar-track {
+     background-color: transparent;
      }
 
-     &:hover::-webkit-scrollbar-thumb {
-          background-color: transparent;
-          border-radius: 6px;
+     ::-webkit-scrollbar-thumb {
+     background-color: #909596;
+     border-radius: 20px;
+     border: 6px solid transparent;
+     background-clip: content-box;
      }
+
+     ::-webkit-scrollbar-thumb:hover {
+     background-color: #757a7b;
+     }
+
 }
-
-
 </style>
 
-<script >
-     var elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
-     var elementosIcon2 = document.querySelectorAll('#iconToLight');
-     var themeC = localStorage.getItem('theme') 
-
-     if(themeC === "dark"){
-          elementosIcon1.forEach(element => {
-               element.classList.add('hidden');
-               element.classList.remove('block')
-          });
-          elementosIcon2.forEach(element => {
-               element.classList.remove('hidden');
-               element.classList.add('block')
-          });
-
-     }else{
-
-          elementosIcon1.forEach(element => {
-               element.classList.remove('hidden');
-               element.classList.add('block')
-          });
-          elementosIcon2.forEach(element => {
-               element.classList.add('hidden');
-               element.classList.remove('block')
-          });
-     }    
-
-</script>
