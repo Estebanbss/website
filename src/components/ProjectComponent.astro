@@ -27,7 +27,7 @@ const lang = getLangFromUrl(Astro.url);
           </div>
      </div>
      <p class="dark:text-neutral-400">{data?.description?.[lang]}</p>
-     <div class="w-full scroll flex flex-row gap-2 mt-2">
+     <div class="w-full scroll flex flex-row gap-2 mt-2 min-w-[228px] sm:min-w-[591px] md:min-w-[340px]">
           {data?.topics?.map((topic) => (
             <span  class="p-1 px-2  flex flex-row min-w-fit gap-1 border dark:border-neutral-800 border-neutral-400">
                <span class="min-w-[24px] aspect-square">
