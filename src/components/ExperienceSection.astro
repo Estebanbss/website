@@ -14,9 +14,9 @@ const t = useTranslations(lang);
           {
                jobs.map(
                 
-                    (job:Job, index:number)=>(
+                    (job:Job)=>(
                     
-                    <JobComponent data={job} index={index} />
+                    <JobComponent data={job} />
                     
                     )
                )

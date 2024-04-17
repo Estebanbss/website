@@ -1,6 +1,5 @@
 ---
 import ProjectComponent from './ProjectComponent.astro';
-import { Icon } from 'astro-icon/components';
 import { projects } from '../data/projects';
 import type { Project } from '../types/project';
 import TitleComponent from './TitleComponent.astro';
@@ -37,7 +36,7 @@ const t = useTranslations(lang);
      </div>
 </div>
 
-<script async>
+<script is:inline>
     const projects = document.querySelectorAll('.project');
     const next = document.querySelector('.next');
     const previous = document.querySelector('.previous');

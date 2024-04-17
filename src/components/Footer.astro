@@ -45,7 +45,7 @@ const t = useTranslations(lang);
 
 
 
-<script>
+<script is:inline>
 const currentYear = new Date().getFullYear();
-document.querySelector('i-year')!.textContent = currentYear.toString();
+document.querySelector('i-year').textContent = currentYear.toString();
 </script>

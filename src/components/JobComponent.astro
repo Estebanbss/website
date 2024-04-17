@@ -1,8 +1,6 @@
 ---
 import type { Job } from "../types/job";
-import { Icon } from 'astro-icon/components';
 const {data} = Astro.props as {data: Job};
-const {index} = Astro.props as {index: number};
 
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);

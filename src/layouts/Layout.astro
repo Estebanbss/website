@@ -2,7 +2,6 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '@fontsource-variable/dosis';
-import { useTranslations, type UiType } from '../i18n/utils';
 
 interface Props {
 	title: string;
@@ -10,7 +9,7 @@ interface Props {
 }
 
 const { title, lang } = Astro.props;
-const t = useTranslations(lang as UiType);
+
 
 ---
 
@@ -20,7 +19,7 @@ const t = useTranslations(lang as UiType);
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -36,7 +35,7 @@ const t = useTranslations(lang as UiType);
 	</body>
 </html>
 
-<style is:global>
+<style media="all" is:global>
 
 :root{
      color-scheme: light dark;

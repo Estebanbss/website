@@ -1,7 +1,5 @@
 ---
 import { Icon } from "astro-icon/components"
-
-const THEMES = ["Light", "Dark"]
 ---
 
 <button aria-label="buttonTheme" class="hover:scale-125 min-w-[48px] sm:min-w-[32px] aspect-square flex justify-center items-center" id=themeButton>
@@ -31,18 +29,18 @@ const THEMES = ["Light", "Dark"]
         iconThemeSun.style.display = 'none';
         iconThemeMoon.style.display = 'block';
 
-            handleDarkAstroIcons(themePreference);
+            handleDarkAstroIcons();
 
     } else {
         iconThemeSun.style.display = 'block';
         iconThemeMoon.style.display = 'none';
 
-          handleLightAstroIcons(themePreference);
+          handleLightAstroIcons();
     }
 }
 
   
-  const handleLightAstroIcons = (theme) => {
+  const handleLightAstroIcons = () => {
      const elementosIcon1 = document.querySelectorAll('[data-icon="vscode-icons:file-type-astro"]');
      const elementosIcon2 = document.querySelectorAll('#iconToLight');
      
@@ -54,7 +52,7 @@ const THEMES = ["Light", "Dark"]
      });
   }
 
-const handleDarkAstroIcons = (theme) => {
+const handleDarkAstroIcons = () => {
       const elementosIcon1 = document.querySelectorAll('#iconToDark');
       const elementosIcon2 = document.querySelectorAll('#iconToLight');
       

@@ -1,13 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import ThemeTogggle from './ThemeTogggle.astro';
+import ThemeTogggle from './ThemeToggle.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const href = lang === 'es' ? '/' : `/${lang}`; 
 ---
 
-<header id="header" class="min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
+<header id="header" class="min-h-[170px] md:min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
 
      <nav id="nav" class="flex  flex-col sm:flex-row gap-x-5 gap-y-3 mb-2 sm:mb-0 sm:gap-y-0  text-base font-normal xl:max-w-[1150px] relative mx-auto w-full items-center justify-center">
           <a href={href} aria-label="Main icon" id="mainIcon"   class="w-[48px] aspect-square mb-3  sm:mb-0 rounded-full relative overflow-hidden hover:bg-black dark:hover:bg-white mt-4 sm:mt-0 hover:bg-opacity-5 dark:hover:bg-opacity-5   ">
@@ -49,7 +49,7 @@ const href = lang === 'es' ? '/' : `/${lang}`;
 
 </header>
  
-<script async>
+<script is:inline>
 
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
