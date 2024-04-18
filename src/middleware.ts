@@ -1,8 +1,5 @@
 import { defineMiddleware } from "astro/middleware";
 
-const INDEX_PATH = "/";
-
-
 export const onRequest = defineMiddleware((context, next) => {
 
   if (context.url.pathname === '/ln') {
@@ -17,7 +14,5 @@ export const onRequest = defineMiddleware((context, next) => {
      return Response.redirect(new URL('https://github.com/Estebanbss/website', context.url), 302);
   }     
   
-
-
   return next();
 });
