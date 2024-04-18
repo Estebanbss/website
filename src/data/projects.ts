@@ -13,7 +13,7 @@ export const projects: Project[] = [
           url: "https://github.com/Estebanbss/mini-trello",
           web: "https://estebanbss.github.io/mini-trello",
           api: "https://github.com/Estebanbss/trello-clone-api",
-          topics: [techs[1], techs[3], techs[4], techs[11], techs[5], techs[6], techs[7]],
+          topics: [techs[1], techs[3], techs[4], techs[Object.values(techs).length-1], techs[5], techs[6], techs[7]],
           team: ["Estebanbss"],
      },
 
@@ -27,7 +27,7 @@ export const projects: Project[] = [
           url: "https://github.com/Estebanbss/paroot-url",
           web: "https://estebanbss.github.io/paroot-url/",
           api: "https://github.com/Estebanbss/paroot-api",
-          topics: [techs[1], techs[3], techs[4], techs[12], techs[4], techs[5], techs[6]],
+          topics: [techs[1], techs[3], techs[4], techs[Object.values(techs).length], techs[4], techs[5], techs[6]],
           team: ["Estebanbss"],
      },
 
