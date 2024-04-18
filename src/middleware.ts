@@ -1,9 +1,9 @@
 import { defineMiddleware } from "astro/middleware";
 
 export const onRequest = defineMiddleware((context, next) => {
-     let domain = context.url.hostname;
+     let domain = context.url.href;
      let webDomain = 'https://estebanbss.com';
-     
+
   if (domain === webDomain + '/ln' ) {
     return Response.redirect(new URL('https://www.linkedin.com/in/estebanbss/', context.url), 302);
   }
@@ -17,4 +17,4 @@ export const onRequest = defineMiddleware((context, next) => {
   }     
   
   return next();
-});
+});                                               

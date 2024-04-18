@@ -23,7 +23,15 @@ const { title, lang } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-     
+          <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG"></script>
+     <script async>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-VDHWF5ZRSG');
+     </script>
 	<body class="dark:bg-neutral-900 bg-white ">
           <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
           bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(225,255,217,0.5),rgba(255,255,255,0.5))]
