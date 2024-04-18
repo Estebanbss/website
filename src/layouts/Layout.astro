@@ -17,16 +17,30 @@ const { title, lang } = Astro.props;
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Portafolio de Esteban 🌱" />
+          <meta name="keywords" content="Esteban, ImEsteban, Estebanbss.dev, Developer, Desarrollador, Frontend Developer, Desarrollador Frontend, Fullstack, Fullstack Developer, Desarrollador Fullstack, Portafolio Esteban, Esteban Barrera, Juan Esteban Portafolio, Esteban Barrera's Page, Esteban's page, Desarrollo web, web design, Web development"/>
+          <meta name="author" content="Esteban Barrera"/>
+          <meta property="og:title" content={title}/>
+          <meta property="og:description" content="Portafolio de Esteban 🌱"/>
+          <meta property="og:url" content="https://estebanbss.dev"/>
+          <meta property="og:owners" content="Esteban Barrera"/>
+          <meta property="og:image" content="/icon.svg"/>
 		<meta name="viewport" content="width=device-width" />
+          <meta name="theme-color" content="#031700"/>
+          <meta name="robots" content="index, follow"/>
+          <meta name="url" content="https://estebanbss.dev"/>
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="audience" content="all"/>
+          <meta name="language" content={lang}/>
+          <meta name="revisit-after" content="1 day"/>
 		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
           
 	</head>
                <!-- Google tag (gtag.js) -->
-               <script  defer src="https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG"></script>
-               <script defer>
+               <script is:inline async="true" src="https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG"></script>
+               <script is:inline defer>
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
@@ -44,7 +58,7 @@ const { title, lang } = Astro.props;
 	</body>
 </html>
 
-<style media="all" is:global>
+<style is:global>
 
 :root{
      color-scheme: light dark;
