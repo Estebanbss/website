@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import ThemeTogggle from './ThemeToggle.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const href = lang === 'es' ? '/' : `/${lang}`; 
+const href = lang === 'es' ? '/' : `${lang}`; 
 ---
 
 <header id="header" class="min-h-[170px] md:min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
@@ -76,12 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function changeLanguage(lang) {
-        if(lang === 'es'){
-               window.location.href = '/'; 
-        }else{
-          window.location.href = '/' + lang;
-        }
-    }
+    console.log(lang);
+    const defaultLang = 'es'; // Idioma predeterminado
+    
+    // Construir la URL de destino
+    const destinationUrl = lang === defaultLang ? '/' : `/${lang}`;
+
+    // Redirigir al usuario a la URL de destino
+    window.location.href = destinationUrl;
+}
+
 
 
     function highlightNavLink(anchor, div) {

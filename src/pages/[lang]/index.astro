@@ -9,10 +9,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 export async function getStaticPaths() {
-     return ["en", "fr", "es"].map((lang) => {
-          return { params: { lang } };
-     });
+    return ["en", "fr", "es"].map((lang) => {
+        return { params: { lang } };
+    });
 }
+
 ---
 
 <Layout lang={lang} title={t("site.title")}>
@@ -29,15 +30,15 @@ export async function getStaticPaths() {
                     >
                          {t("hi.title")}
                     </h1>
-                    <h2
-                         class="font-light text-base md:text-lg min-h-[50px] sm:min-h-[30px] min-w-[298px] max-w-[90%] sm:min-w-[617px] w-[90%]"
+                    <p
+                         class="font-light text-base md:text-lg dark:[&>strong]:text-lime-500 [&>strong]:text-lime-600 [&>strong]:font-black min-w-fit min-h-[30px]"
                     >
                          {t("h2.first")}
-                         <strong class="text-lime-500 font-extrabold"
+                         <strong class=""
                               >{t("UxUi")}</strong
                          >
                          {t("h2.second")}
-                    </h2>
+                    </p>
                     <a
                          href={t("link.cv")}
                          target="_blank"

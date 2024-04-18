@@ -6,7 +6,7 @@ export const LANGUAGES = {
   es: "Español",
 };
 
-export const DEFAULT_LANG = "es";
+export const DEFAULT_LANG = "en";
 
 export type UiType = keyof typeof ui;
 
@@ -21,10 +21,10 @@ export function useTranslations(lang?: UiType) {
     key: keyof (typeof ui)[typeof DEFAULT_LANG],
     ...args: any[]
   ) {
-    let translation = (ui[lang ?? DEFAULT_LANG][key] || ui[DEFAULT_LANG][key]) as string;
+     let translation = (ui[lang ?? DEFAULT_LANG][key] || ui[DEFAULT_LANG][key]) as string;
     if (args.length > 0) {
       for (let i = 0; i < args.length; i++) {
-        translation = translation.replace(`{${i}}`, args[i]);
+          translation = translation.replace(`{${i}}`, args[i]);
       }
     }
     return translation;
