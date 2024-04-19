@@ -96,8 +96,8 @@ Open up [http://localhost:4321](http://localhost:4321) to view the website 🚀.
 
 ## 🌱 Shortcuts
 
-- estebanbss.dev[**/tw**](https://estebanbss.dev/cv) - Spanish Curriculum Vitae
-- estebanbss.dev[**/tv**](https://estebanbss.dev/en/cv) - English Curriculum Vitae
+- estebanbss.dev[**/cv**](https://estebanbss.dev/cv) - Spanish Curriculum Vitae
+- estebanbss.dev[**/en/cv**](https://estebanbss.dev/en/cv) - English Curriculum Vitae
 - estebanbss.dev[**/ln**](https://estebanbss.dev/ln) - LinkedIn.
 - estebanbss.dev[**/gh**](https://estebanbss.dev/gh) - Github profile.
 - estebanbss.dev[**/git**](https://estebanbss.dev/git) - Github website repository.
