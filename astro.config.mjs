@@ -16,5 +16,5 @@ export default defineConfig({
       // Si no contiene "stylesheet", devuelve el enlace sin modificar
       return `<link rel="${rel}" href="${href}" />`;
     }
-  }
+  },
 });

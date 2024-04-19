@@ -76,17 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function changeLanguage(lang) {
-    console.log(lang);
-    const defaultLang = 'es'; // Idioma predeterminado
-    
-    // Construir la URL de destino
-    const destinationUrl = lang === defaultLang ? '/' : `/${lang}`;
-
-    // Redirigir al usuario a la URL de destino
-    window.location.href = destinationUrl;
-}
-
-
+        if(lang === 'es'){
+               window.location.href = '/'; 
+        }else{
+          window.location.href = '/' + lang;
+        }
+    }
 
     function highlightNavLink(anchor, div) {
         if (window.scrollY >= div.offsetTop - 300) {

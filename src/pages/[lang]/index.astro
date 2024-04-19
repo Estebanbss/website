@@ -9,11 +9,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 export async function getStaticPaths() {
-    return ["en", "fr", "es"].map((lang) => {
-        return { params: { lang } };
-    });
+    return ["en", "fr", "es"].map(lang => ({ params: { lang } }));
 }
 
+console.log(lang);
 ---
 
 <Layout lang={lang} title={t("site.title")}>
