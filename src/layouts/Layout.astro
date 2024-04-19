@@ -4,11 +4,17 @@ import Footer from '../components/Footer.astro';
 import '@fontsource-variable/dosis';
 
 interface Props {
-	title: string;
-     lang: string;
+    title: string;
+    lang: string;
+    redirect?: {
+        url: string | null | undefined;
+        timing: number | null;
+    };
 }
 
-const { title, lang } = Astro.props;
+const { title, lang, redirect } = Astro.props;
+
+console.log("mira broooooooooooooooo",redirect?.url);
 
 ---
 
@@ -34,6 +40,21 @@ const { title, lang } = Astro.props;
           <meta name="revisit-after" content="1 day"/>
 		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
+          {
+               // Si redirect es null o undefined, o si redirect.url es igual a '/',
+               // entonces redirigir al inicio
+               (!redirect || redirect.url === '/') ? (
+                   // Redirigir al inicio o no hacer nada si redirect es null o undefined
+                   null
+               ) : (
+                   // Si redirect.url no es igual a '/', redireccionar a la URL especificada después de un tiempo especificado
+                   <meta 
+                       http-equiv="refresh" 
+                       content={`${redirect.timing ? redirect.timing : '0'}; url=${redirect.url}`}
+                   />
+               )
+           }
+           
 		<title>{title}</title>
           
 	</head>
@@ -92,12 +113,7 @@ body{
 }
 </style>
    <!-- Fragmento de Google Tag Manager -->
-   <script>
-               declare global {
-          interface Window {
-               dataLayer: any[];
-          }
-          }
+   <script is:inline>
      function cargarGoogleTagManager() {
      var script = document.createElement('script');
      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG';
@@ -107,7 +123,7 @@ body{
      // Configurar Google Tag Manager después de cargar el script
      script.onload = function() {
      window.dataLayer = window.dataLayer || [];
-     function gtag(p0: string, p1: string | Date){window.dataLayer.push(arguments);}
+     function gtag(){window.dataLayer.push(arguments);}
      gtag('js', new Date());
      gtag('config', 'G-VDHWF5ZRSG');
      };
