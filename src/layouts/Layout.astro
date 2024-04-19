@@ -6,15 +6,12 @@ import '@fontsource-variable/dosis';
 interface Props {
     title: string;
     lang: string;
-    redirect?: {
-        url: string | null | undefined;
-        timing: number | null;
-    };
+
 }
 
-const { title, lang, redirect } = Astro.props;
+const { title, lang} = Astro.props;
 
-console.log("mira broooooooooooooooo",redirect?.url);
+
 
 ---
 
@@ -40,21 +37,6 @@ console.log("mira broooooooooooooooo",redirect?.url);
           <meta name="revisit-after" content="1 day"/>
 		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
-          {
-               // Si redirect es null o undefined, o si redirect.url es igual a '/',
-               // entonces redirigir al inicio
-               (!redirect || redirect.url === '/') ? (
-                   // Redirigir al inicio o no hacer nada si redirect es null o undefined
-                   null
-               ) : (
-                   // Si redirect.url no es igual a '/', redireccionar a la URL especificada después de un tiempo especificado
-                   <meta 
-                       http-equiv="refresh" 
-                       content={`${redirect.timing ? redirect.timing : '0'}; url=${redirect.url}`}
-                   />
-               )
-           }
-           
 		<title>{title}</title>
           
 	</head>

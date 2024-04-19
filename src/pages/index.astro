@@ -4,19 +4,13 @@ import ProjectsSection from "../components/ProjectsSection.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import AboutSection from "../components/AboutSection.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { getRedirectUrlFromUrl } from "../utils/redirects";
-
 const lang = getLangFromUrl(Astro.url);
 
 const t = useTranslations(lang);
 
-const redirectInfo = {
-     url : getRedirectUrlFromUrl(Astro.url),
-     timing: 0,
-}
 ---
 
-<Layout redirect={redirectInfo}  lang={lang} title={t("site.title")}>
+<Layout  lang={lang} title={t("site.title")}>
      <main class="flex justify-center max-w-[95%] min-w-[95%]">
           <div
                class="md:min-w-[760px] xl:min-w-[1150px] sm:max-w-[1150px] flex flex-col max-w-full"
@@ -55,3 +49,19 @@ const redirectInfo = {
           </div>
      </main>
 </Layout>
+
+<script  is:inline defer>
+// Obtener la URL actual
+const currentUrl = window.location.href;
+
+// URL deseada
+const desiredUrl = 'https://estebanbss.dev';
+const desiredUrl2 = 'https://estebanbss.dev/';
+
+// Verificar si la URL actual es diferente de la URL deseada
+if (currentUrl !== desiredUrl && currentUrl !== desiredUrl2) {
+  // Redirigir a la URL deseada
+  window.location.href = desiredUrl;
+}
+
+</script>

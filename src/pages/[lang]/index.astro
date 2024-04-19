@@ -4,7 +4,7 @@ import ProjectsSection from "../../components/ProjectsSection.astro";
 import ExperienceSection from "../../components/ExperienceSection.astro";
 import AboutSection from "../../components/AboutSection.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { getRedirectUrlFromUrl } from "../../utils/redirects";
+
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,16 +13,9 @@ export async function getStaticPaths() {
     return ["en", "fr", "es"].map(lang => ({ params: { lang } }));
 }
 
-const redirectInfo = {
-     url : getRedirectUrlFromUrl(Astro.url),
-     timing: 1,
-}
-
-console.log(redirectInfo)
-
 ---
 
-<Layout redirect={redirectInfo} lang={lang} title={t("site.title")}>
+<Layout  lang={lang} title={t("site.title")}>
      <main class="flex justify-center max-w-[95%] min-w-[95%]">
           <div
                class="md:min-w-[760px] xl:min-w-[1150px] sm:max-w-[1150px] flex flex-col max-w-full"
