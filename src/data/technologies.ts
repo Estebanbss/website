@@ -15,8 +15,10 @@ export const techs: { [key: number]: string } = {
      12: "Illustrator",
      13: "Figma",
      14: "Postman",
-     15: "API RestFul",
-     16: "Minimal API"
+     15: "HTML",
+     16: "CSS",
+     17: "API RestFul",
+     18: "Minimal API"
  };
  
  export const techsIcons: TechIcons = {
@@ -34,7 +36,9 @@ export const techs: { [key: number]: string } = {
      12: { 1: "vscode-icons:file-type-ai", 2: "vscode-icons:file-type-ai" },
      13: { 1: "logos:figma", 2: "logos:figma"},
      14: { 1: "vscode-icons:file-type-postman", 2: "vscode-icons:file-type-postman" },
-     15: { 1: "mdi:api", 2: "mdi:api" },
-     16: { 1: "mdi:api", 2: "mdi:api" }
+     15: { 1: "ph:file-html", 2: "vscode-icons:file-type-html" },
+     16: { 1: "ph:file-css", 2: "vscode-icons:file-type-css" },
+     17: { 1: "mdi:api", 2: "mdi:api" },
+     18: { 1: "mdi:api", 2: "mdi:api" }
  };
  

@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div  id="projects" class="w-full flex min-h-[670px] md:min-h-[357px] flex-col gap-2 mb-10 sm:my-10 ">
+<div  id="projects" class="w-full flex min-h-[470px] md:min-h-[357px] flex-col gap-2 mb-10 sm:my-10 ">
 
      <TitleComponent title={t("p.sectionTitle")} icon="ph:code-bold" />
      
@@ -21,7 +21,7 @@ const t = useTranslations(lang);
           ))
      }
      {
-          projects.length > 6 
+          projects.length > 4 
           ? 
           <div></div>
           <div class="flex flex-row justify-center w-full dark:text-white text-[#1F2937] gap-2">
@@ -47,19 +47,19 @@ const t = useTranslations(lang);
         previous?.classList?.toggle('opacity-50', index === 0);
         previous?.classList?.toggle('cursor-default', index === 0);
 
-        next?.classList?.toggle('disabled', index >= projects.length - 6);
-        next?.classList?.toggle('opacity-50', index >= projects.length - 6);
-        next?.classList?.toggle('cursor-default', index >= projects.length - 6);
+        next?.classList?.toggle('disabled', index >= projects.length - 4);
+        next?.classList?.toggle('opacity-50', index >= projects.length - 4);
+        next?.classList?.toggle('cursor-default', index >= projects.length - 4);
     }
 
     function updateProjects() {
         projects.forEach((project, i) => {
-            project.style.display = (i >= index && i < index + 6) ? 'block' : 'none';
+            project.style.display = (i >= index && i < index + 4) ? 'block' : 'none';
         });
     }
 
     function nextHandler() {
-        if (index < projects.length - 6) {
+        if (index < projects.length - 4) {
             index++;
             updateProjects();
             updateButtons();

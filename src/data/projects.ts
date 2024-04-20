@@ -58,4 +58,17 @@ export const projects: Project[] = [
           team: ["Estebanbss"],
      },
 
+     {
+          title: "monkey-type-clone",         
+          description: {
+               en: "🦜 MonkeyType game clone but is a parrot",
+               es: "🦜 Clon del juego MonkeyType pero es un loro",
+               fr: "🦜 Clone du jeu MonkeyType mais c'est un perroquet",
+          },
+          url: "https://github.com/Estebanbss/monkey-type-clone",
+          web: "https://estebanbss.github.io/monkey-type-clone/",
+          topics: [techs[10], techs[3], techs[4]],
+          team: ["Estebanbss"],    
+     },
+
 ]
