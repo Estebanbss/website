@@ -3,13 +3,14 @@ import { techs,techsIcons } from "../data/technologies";
 import type { Project } from "../types/project";
 import { Icon } from 'astro-icon/components'
 const {data} = Astro.props as {data: Project};
+const {index} = Astro.props as {index: number};
 import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 ---
 <div class="project min-h-[140px] max-h-[140px] overflow-hidden w-full p-4 rounded-lg border dark:border-neutral-800 border-neutral-400 dark:text-white text-[#1F2937]">
      <div class="flex flex-row items-center gap-2">
           <a href={data.web} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
-               <h3 class="text-lg md:text-xl font-bold group-hover:opacity-50">{data.title}</h3>
+               <h3 class="text-lg md:text-xl font-bold group-hover:opacity-50">{index} - {data.title}</h3>
                <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px]  transition-transform duration-200 opacity-50"/>
           </a>
           <div class="ml-auto flex flex-row gap-3">

@@ -96,20 +96,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleScroll() {
         if (window.scrollY > header.offsetHeight && !change) {
-          console.log("hi")
+
           mainIcon.classList.add('hidden');
                options.classList.add('hidden');
                nav.classList.remove('relative')
                nav.classList.add('fixed','translate-x-[-50%]','top-5','left-1/2')
-               list.classList.add('border','rounded-sm','bg-white','bg-opacity-50','backdrop-blur-xl','rounded-lg')
+               list.classList.add('border','rounded-sm','dark:bg-neutral-400','bg-opacity-90','rounded-lg','bg-gray-100')
                change = true;
         } else if (window.scrollY < header.offsetHeight && change) {
-               console.log("bye")
+          
                mainIcon.classList.remove('hidden');
                options.classList.remove('hidden');
                nav.classList.remove('fixed','translate-x-[-50%]', 'top-5','left-1/2','translate-x-[-50%]')
                nav.classList.add('relative')
-               list.classList.remove('border','rounded-sm','bg-white','bg-opacity-50','backdrop-blur-xl','rounded-lg')
+               list.classList.remove('border','rounded-sm','dark:bg-neutral-400','bg-opacity-90','rounded-lg','bg-gray-100')
                change = false;
         }
     }

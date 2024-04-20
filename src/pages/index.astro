@@ -50,18 +50,3 @@ const t = useTranslations(lang);
      </main>
 </Layout>
 
-<script  is:inline defer>
-// Obtener la URL actual
-const currentUrl = window.location.href;
-
-// URL deseada
-const desiredUrl = 'https://estebanbss.dev';
-const desiredUrl2 = 'https://estebanbss.dev/';
-
-// Verificar si la URL actual es diferente de la URL deseada
-if (currentUrl !== desiredUrl && currentUrl !== desiredUrl2) {
-  // Redirigir a la URL deseada
-  window.location.href = desiredUrl;
-}
-
-</script>

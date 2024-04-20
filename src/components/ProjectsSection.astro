@@ -6,77 +6,95 @@ import TitleComponent from './TitleComponent.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+
 ---
 
-<div  id="projects" class="w-full flex min-h-[470px] md:min-h-[357px] flex-col gap-2 mb-10 sm:my-10 ">
-
+<div id="projects" class="w-full flex min-h-[470px] md:min-h-[357px] flex-col gap-2 mb-10 sm:my-10">
      <TitleComponent title={t("p.sectionTitle")} icon="ph:code-bold" />
-     
      <div class="grid md:grid-cols-2 gap-4 md:gap-3 justify-center min-w-full items-center">
-     {
-          projects.map((project: Project, index:number) => (
-
-               <ProjectComponent data={project} index={index} />
-     
+          {projects.map((project: Project, index: number) => (
+              <ProjectComponent data={project} index={index + 1} class="project" style={{ display: index < 4 ? 'block' : 'none' }} />
           ))
+          }
+          <div id="1" class="min-h-[140px]"></div>
+          <div id="2" class="min-h-[140px]"></div>
+          <div id="3" class="min-h-[140px]"></div>
+          {projects.length > 4 && (
+              <div></div>
+              <div class="flex flex-row justify-center w-full dark:text-white text-[#1F2937] gap-2">
+                  <button class="previous dark:bg-neutral-500 w-[50%] flex justify-center p-1 border dark:border-neutral-900 border-neutral-300 rounded-lg select-none">Previous</button>
+                  <button class="next dark:bg-neutral-500 w-[50%] flex justify-center p-1 border dark:border-neutral-900 border-neutral-300 rounded-lg select-none">Next</button>
+              </div>
+          )}
+      </div>
+      
+ </div>
+ 
+ <script is:inline>
+     const projectsContainer = document.getElementById('projects');
+     const projects = Array.from(projectsContainer.querySelectorAll('.project'));
+     const next = projectsContainer.querySelector('.next');
+     const previous = projectsContainer.querySelector('.previous');
+     const uno = document.getElementById('1');
+     const dos = document.getElementById('2');
+     const tres = document.getElementById('3');
+     let index = 0;
+ 
+     function updateButtons() {
+         previous.classList.toggle('disabled', index === 0);
+         previous.classList.toggle('bg-neutral-500', index === 0);
+         previous.classList.toggle('dark:bg-white', index === 0);
+         previous.classList.toggle('bg-opacity-50', index === 0);
+         previous.classList.toggle('dark:bg-opacity-20', index === 0);
+         previous.classList.toggle('cursor-default', index === 0);
+ 
+         next.classList.toggle('disabled', index >= projects.length - 4);
+         next.classList.toggle('bg-neutral-500', index >= projects.length - 4);
+         next.classList.toggle('dark:bg-white', index >= projects.length - 4);
+         next.classList.toggle('bg-opacity-50', index >= projects.length - 4);
+         next.classList.toggle('dark:bg-opacity-20', index >= projects.length - 4);
+         next.classList.toggle('cursor-default', index >= projects.length - 4);
      }
-     {
-          projects.length > 4 
-          ? 
-          <div></div>
-          <div class="flex flex-row justify-center w-full dark:text-white text-[#1F2937] gap-2">
-          <button class="previous bg-white drop-shadow-xl  backdrop-blur-xl bg-opacity-50 w-[50%] flex justify-center p-1 border dark:border-neutral-800 border-neutral-400 rounded-lg select-none"
-          >Previous</button>
-               
-          <button class="next bg-white drop-shadow-xl  backdrop-blur-xl bg-opacity-50 w-[50%] flex justify-center p-1 border dark:border-neutral-800 border-neutral-400 rounded-lg select-none"
-          >Next</button>    
-          </div> 
-          : null
+ 
+     function updateProjects() {
+         projects.forEach((project, i) => {
+             project.style.display = (i >= index && i < index + 4) ? 'block' : 'none';
+         });
+
+         projects.forEach((project, i) => {
+             if (i === index) {
+                 uno.style.display = 'block';
+                 dos.style.display = 'block';
+                 tres.style.display = 'block';
+             } else {
+                 uno.style.display = 'none';
+                 dos.style.display = 'none';
+                 tres.style.display = 'none';
+             }
+         });
      }
-     </div>
-</div>
-
-<script is:inline>
-    const projects = document.querySelectorAll('.project');
-    const next = document.querySelector('.next');
-    const previous = document.querySelector('.previous');
-    let index = 0;
-
-    function updateButtons() {
-        previous?.classList?.toggle('disabled', index === 0);
-        previous?.classList?.toggle('opacity-50', index === 0);
-        previous?.classList?.toggle('cursor-default', index === 0);
-
-        next?.classList?.toggle('disabled', index >= projects.length - 4);
-        next?.classList?.toggle('opacity-50', index >= projects.length - 4);
-        next?.classList?.toggle('cursor-default', index >= projects.length - 4);
-    }
-
-    function updateProjects() {
-        projects.forEach((project, i) => {
-            project.style.display = (i >= index && i < index + 4) ? 'block' : 'none';
-        });
-    }
-
-    function nextHandler() {
-        if (index < projects.length - 4) {
-            index++;
-            updateProjects();
-            updateButtons();
-        }
-    }
-
-    function previousHandler() {
-        if (index > 0) {
-            index--;
-            updateProjects();
-            updateButtons();
-        }
-    }
-
-    next?.addEventListener('click', nextHandler);
-    previous?.addEventListener('click', previousHandler);
-
-    updateProjects();
-    updateButtons();
-</script>
+ 
+     function nextHandler() {
+         if (index < projects.length - 4) {
+             index = index + 4;
+             updateProjects();
+             updateButtons();
+         }
+     }
+ 
+     function previousHandler() {
+         if (index > 0) {
+             index = index - 4;
+             updateProjects();
+             updateButtons();
+         }
+     }
+ 
+     next.addEventListener('click', nextHandler);
+     previous.addEventListener('click', previousHandler);
+ 
+     updateButtons();
+     updateProjects();
+ </script>
+ 
