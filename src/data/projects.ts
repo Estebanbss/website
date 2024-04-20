@@ -67,7 +67,7 @@ export const projects: Project[] = [
           },
           url: "https://github.com/Estebanbss/monkey-type-clone",
           web: "https://estebanbss.github.io/monkey-type-clone/",
-          topics: [techs[10], techs[3], techs[4]],
+          topics: [techs[15], techs[16], techs[2]],
           team: ["Estebanbss"],    
      },
 
