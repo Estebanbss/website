@@ -53,7 +53,7 @@ export const projects: Project[] = [
 
           },
           url: "https://github.com/Estebanbss/landing-palhuila",
-          web:"https://estebanbss.github.io/landing-palhuila/",
+          web:"https://landing.palhuila.com/",
           topics: [techs[10],techs[3],techs[4]],
           team: ["Estebanbss"],
      },
