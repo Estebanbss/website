@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '@fontsource-variable/dosis';
+import '../styles/main.css';
 
 interface Props {
     title: string;
@@ -16,7 +16,7 @@ const { title, lang} = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html class="font-dosis" lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Explora el portafolio de Esteban para ver sus proyectos destacados de desarrollo web. ¡Convierte tus ideas en realidad y déjate inspirar!" />
@@ -35,6 +35,27 @@ const { title, lang} = Astro.props;
           <meta name="audience" content="all"/>
           <meta name="language" content={lang}/>
           <meta name="revisit-after" content="1 day"/>
+          <link
+          rel="preload"
+          href="/fonts/dosis-latin-500-normal.woff"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/dosis-latin-700-normal.woff"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/dosis-latin-800-normal.woff"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
 		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -59,7 +80,6 @@ const { title, lang} = Astro.props;
 }
 
 html{
-     font-family: 'Dosis Variable', sans-serif;
      scroll-behavior: smooth;
 }
 
@@ -94,23 +114,19 @@ body{
   background-color: #757a7b;
 }
 </style>
-   <!-- Fragmento de Google Tag Manager -->
-   <script is:inline>
-     
+<script is:inline defer>
      function cargarGoogleTagManager() {
-     var script = document.createElement('script');
-     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG';
-     script.async = true;
-     document.head.appendChild(script);
-
-     // Configurar Google Tag Manager después de cargar el script
-     script.onload = function() {
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){window.dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-VDHWF5ZRSG');
-     };
+         var script = document.createElement('script');
+         script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VDHWF5ZRSG';
+         script.async = true;
+         document.head.appendChild(script);
+         script.onload = function() {
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', 'G-VDHWF5ZRSG');
+         };
      }
      document.addEventListener('DOMContentLoaded', cargarGoogleTagManager);
  </script>
-
+ 

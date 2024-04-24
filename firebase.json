@@ -21,16 +21,6 @@
          }
        ],
        "redirects": [
-          {
-               "source": "https://estebanbss.dev/",
-               "destination": "https://estebanbss.dev",
-               "type": 301
-          },     
-          {
-               "source": "http://estebanbss.dev/",
-               "destination": "https://estebanbss.dev",
-               "type": 301
-          },   
          {
            "source": "/cv",
            "destination": "https://drive.google.com/file/d/1ypkmvNxf4ZNEo4kBh01O38uD539V-2ca/view",

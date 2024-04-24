@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 
 ---
 
-<div id="projects" class="w-full flex min-h-[470px] md:min-h-[357px] flex-col gap-2 mb-10 sm:my-10">
+<div id="projects" class="w-full flex min-w-[282px] max-w-[99%] min-h-[740px] md:min-h-[404px] flex-col gap-2 mb-10 sm:my-10">
      <TitleComponent title={t("p.sectionTitle")} icon="ph:code-bold" />
      <div class="grid md:grid-cols-2 gap-4 md:gap-3 justify-center min-w-full items-center">
           {projects.map((project: Project, index: number) => (
