@@ -98,3 +98,33 @@ const t = useTranslations(lang);
      updateProjects();
  </script>
  
+ <script is:inline defer>
+     // Definir y asignar un valor inicial a focused
+     let focused = false;
+     
+     // Función handleMouseMove definida globalmente
+     function handleMouseMove(e) {
+       const rect = e.currentTarget.getBoundingClientRect();
+       const position = {
+         x: e.clientX - rect.left,
+         y: e.clientY - rect.top
+       };
+       const opacity = focused ? 1 : 0;
+       e.currentTarget.style.opacity = opacity;
+       e.currentTarget.style.background = `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(97, 97, 97, 0.1), transparent 60%)`;
+     }
+     
+     // Selecciona todos los elementos con la clase .project
+     const projectss = document.querySelectorAll('.project');
+
+     // Itera sobre cada elemento y asigna event listeners
+     projectss.forEach((project) => {
+       project.addEventListener('mousemove', handleMouseMove);
+       project.addEventListener('focus', () => { focused = true; });
+       project.addEventListener('blur', (e) => { focused = false;e.currentTarget.style.background = 'none' });
+       project.addEventListener('mouseenter', () => { focused = true; });
+       project.addEventListener('mouseleave', (e) => { focused = false; e.currentTarget.style.background = 'none' });
+     });
+     </script>
+     
+     

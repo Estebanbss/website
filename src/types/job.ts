@@ -4,5 +4,6 @@ export interface Job {
      description?: { [key: string]: string };
      startDate?: { [key: string]: string };
      endDate?: { [key: string]: string };
+     linkCompany?: string;
      evidence?: string;
 }

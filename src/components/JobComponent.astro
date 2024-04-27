@@ -1,7 +1,7 @@
 ---
 import type { Job } from "../types/job";
 const {data} = Astro.props as {data: Job};
-
+import { Icon } from 'astro-icon/components';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,8 +13,11 @@ const t = useTranslations(lang);
      <span class="text-lime-600 dark:text-lime-500 absolute rounded-full text-5xl left-[2.5px] top-0">•</span>
           <div class="flex flex-col  md:w-[40%]">
                <h3 class="text-xl font-extrabold leading-6 text-lime-600 dark:text-lime-500">{data?.jobTitle?.[lang]}</h3>
-               <h4 class="text-lg font-bold opacity-90">{data.company}</h4>
-               <time class="text-sm font-ligth">{data?.endDate?.[lang]}</time>
+               <a href={data.linkCompany} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
+                    <span class="text-lg  font-bold group-hover:opacity-50">{data.company}</span>
+                    <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px]  transition-transform duration-200 opacity-50"/>
+               </a>
+               <time class="text-sm font-ligth">{data?.startDate?.[lang]} - {data?.endDate?.[lang]}</time>
           </div>
           <div class="flex flex-col gap-2 md:w-[60%]">
                <p class="font-ligth text-lg">{data?.description?.[lang]}</p>

@@ -2,9 +2,9 @@
 import { Icon } from "astro-icon/components"
 ---
 
-<button aria-label="buttonTheme" class="hover:scale-125 min-w-[48px] sm:min-w-[32px] aspect-square flex justify-center items-center" id=themeButton>
-                    <Icon id=IconThemeSun name="ph:sun" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
-                    <Icon id=IconThemeMoon name="ph:moon" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/>
+<button aria-label="buttonTheme" class=" min-w-[48px] sm:min-w-[32px] aspect-square flex justify-center items-center rounded-lg  hover:bg-black hover:bg-opacity-5 hover:dark:bg-white hover:dark:bg-opacity-5 group" id=themeButton>
+                    <Icon id=IconThemeSun name="ph:sun" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 duration-500 group-hover:-rotate-12"/>
+                    <Icon id=IconThemeMoon name="ph:moon" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 duration-500 group-hover:-rotate-12"/>
 </button>
 
 <script is:inline>

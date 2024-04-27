@@ -9,6 +9,7 @@ export const jobs: Job[] = [
                fr: "Développeur Fullstack Principal & Chercheur Junior"
           },
           company: "Sennova - SENA",
+          linkCompany: "https://sena.edu.co/es-co/formacion/Paginas/tecnologia-innovacion.aspx",
           description: {
                en: "Responsible for providing specialized services in web development and deployment, ensuring an optimal user experience and efficient performance. Developed a modern and functional web platform, managing both the frontend and backend. Additionally, conducted thorough testing and provided detailed documentation to ensure project success.",
                es: "Responsable de proporcionar servicios especializados en desarrollo y despliegue web, garantizando una experiencia de usuario óptima y un rendimiento eficiente. Desarrollé una plataforma web moderna y funcional, gestionando tanto el frontend como el backend. Además, realicé pruebas exhaustivas y proporcioné documentación detallada para garantizar el éxito del proyecto.",
@@ -35,6 +36,7 @@ export const jobs: Job[] = [
                fr: "Développeur de Logiciels & Assistant de Recherche"
           },
           company: "Sennova - SENA",
+          linkCompany: "https://sena.edu.co/es-co/formacion/Paginas/tecnologia-innovacion.aspx",
           description:{
                en : "I was tasked with supporting software-related research projects, providing expertise in both graphic design and user interface (UI) and user experience (UX) implementation. Collaborated closely with the team to ensure seamless integration of design elements into the project's development process.",
                es : "Me encargué de apoyar proyectos de investigación relacionados con el software, brindando experiencia tanto en diseño gráfico como en implementación de interfaz de usuario (UI) y experiencia de usuario (UX). Colaboré estrechamente con el equipo para garantizar la integración perfecta de los elementos de diseño en el proceso de desarrollo del proyecto.",

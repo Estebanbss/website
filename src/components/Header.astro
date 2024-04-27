@@ -25,11 +25,11 @@ const href = lang === 'es' ? '/' : `${lang}`;
           </div>
 
           <div id="options" class="flex gap-2 mt-3 sm:mt-0 items-center flex-row justify-center sm:border-l sm:border-black dark:border-white sm:border-opacity-30 dark:border-opacity-30 sm:pl-4">
-               <a aria-label="icon" class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://github.com/Estebanbss" target="_blank"><Icon name="mdi:github" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100"/></a>
-               <a  aria-label="icon"class="min-w-[48px] sm:min-w-[32px] flex justify-center items-center" href="https://www.linkedin.com/in/estebanbss/" target="_blank"><Icon name="mdi:linkedin" class="text-2xl dark:text-white text-[#1F2937] opacity-60 hover:opacity-100 hover:text-blue-700 dark:hover:text-blue-700"/></a>
+               <a aria-label="icon" class="min-w-[48px] p-2 w-full max-w-[48px] group aspect-square rounded-lg  hover:bg-black hover:bg-opacity-5 hover:dark:bg-white hover:dark:bg-opacity-5 sm:min-w-[32px] flex justify-center items-center" href="https://github.com/Estebanbss" target="_blank"><Icon name="mdi:github" class="text-2xl dark:text-white text-[#1F2937] opacity-60 group-hover:opacity-100"/></a>
+               <a  aria-label="icon"class="min-w-[48px] p-2 w-full max-w-[48px] group aspect-square rounded-lg  hover:bg-black hover:bg-opacity-5 hover:dark:bg-white hover:dark:bg-opacity-5 sm:min-w-[32px] flex justify-center items-center" href="https://www.linkedin.com/in/estebanbss/" target="_blank"><Icon name="mdi:linkedin" class="text-2xl dark:text-white text-[#1F2937] opacity-60 group-hover:opacity-100 group-hover:text-blue-700 group-hover:dark:text-blue-700"/></a>
 
-               <button aria-label="languageButton" class="relative flex flex-row justify-center items-center min-h-[48px] sm:min-h-[32px] max-w-[48px] aspect-square" id="languageButton">
-                    <span id="spanLang" class="text-[12px] w-[18px] h-[18px] absolute   rounded-sm opacity-50  text-[#1F2937] dark:text-white leading-[17.7px] font-black font-sans hover:opacity-100">{lang.toUpperCase()}</span>
+               <button aria-label="languageButton" class="relative p-2 group rounded-lg  hover:bg-black hover:bg-opacity-5 hover:dark:bg-white hover:dark:bg-opacity-5 flex flex-row justify-center items-center min-h-[48px] w-full max-w-[48px] sm:min-h-[32px]  aspect-square" id="languageButton">
+                    <span id="spanLang" class="text-[12px] w-[18px] h-[18px] absolute   rounded-sm opacity-50  text-[#1F2937] dark:text-white leading-[17.7px] font-black font-sans group-hover:opacity-100">{lang.toUpperCase()}</span>
                </button>
                <div id="alertLanguage" class="border absolute hidden w-full max-w-[90px]  min-h-[100px]  flex-col top-[167px]  sm:top-[60px] opacity-90">
                     <button id="enButton" class="w-full p-1 dark:text-white  text-[#1F2937] font-bold border bg-white dark:bg-[#1F2937] opacity-100 px-4">
