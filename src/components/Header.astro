@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import ThemeTogggle from './ThemeToggle.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const href = lang === 'es' ? '/' : `${lang}`; 
+const href = Astro.url;
 ---
 
 <header id="header" class="min-h-[170px] md:min-h-[60px] px-6  bg-gradient-to-b from-gray-850 from-60%  justify-between flex w-full z-[100] border-b border-opacity-5 dark:border-neutral-800">
