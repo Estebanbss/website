@@ -48,6 +48,33 @@ const { title, lang, description, keywords} = Astro.props;
           <meta name="audience" content="all"/>
           <meta name="language" content={lang}/>
           <meta name="revisit-after" content="1 day"/>
+
+          {
+               lang === 'es' && (
+               <link rel="canonical" href="https://estebanbss.dev/" />
+               <link rel="alternate" hreflang="en" href="https://estebanbss.dev/en" />
+               <link rel="alternate" hreflang="fr" href="https://estebanbss.dev/fr" />
+               )
+
+
+          }
+
+          {
+               
+               lang === 'en' && (
+               <link rel="canonical" href="https://estebanbss.dev/en" />
+               <link rel="alternate" hreflang="es" href="https://estebanbss.dev/" />
+               <link rel="alternate" hreflang="fr" href="https://estebanbss.dev/fr" />
+               )
+          }
+
+          {
+               lang === 'fr' && (
+               <link rel="canonical" href="https://estebanbss.dev/fr" />
+               <link rel="alternate" hreflang="es" href="https://estebanbss.dev/" />
+               <link rel="alternate" hreflang="en" href="https://estebanbss.dev/en" />
+               )
+          }
           <link
           rel="preload"
           href="/fonts/dosis-latin-500-normal.woff"
