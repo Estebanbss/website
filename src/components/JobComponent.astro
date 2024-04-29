@@ -13,7 +13,7 @@ const t = useTranslations(lang);
      <span class="text-lime-600 dark:text-lime-500 absolute rounded-full text-5xl left-[2.5px] top-0">•</span>
           <div class="flex flex-col  md:w-[40%]">
                <h3 class="text-xl font-extrabold leading-6 text-lime-600 dark:text-lime-500">{data?.jobTitle?.[lang]}</h3>
-               <a href={data.linkCompany} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
+               <a href={data.linkCompany} target="_blank" rel="noreferrer" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50 hover:text-opacity-50  group">
                     <span class="text-lg  font-bold group-hover:opacity-50">{data.company}</span>
                     <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px]  transition-transform duration-200 opacity-50"/>
                </a>
@@ -24,7 +24,7 @@ const t = useTranslations(lang);
                {
                     data.evidence && data.evidence !== "" && data.evidence !== null &&
                     data.evidence !== undefined ? (
-                    <a href={data.evidence} target="_blank" class="text-lime-700 dark:text-lime-500 font-bold w-fit">{t("b.knowMore")} ></a>
+                    <a href={data.evidence} target="_blank" rel="noreferrer" class="text-lime-700 dark:text-lime-500 font-bold w-fit">{t("b.knowMore")} ></a>
                     ) : null 
                }
           </div>

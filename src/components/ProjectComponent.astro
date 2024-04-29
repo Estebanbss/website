@@ -9,25 +9,25 @@ const lang = getLangFromUrl(Astro.url);
 ---
 <div class="project min-h-[140px] max-h-[140px] overflow-hidden w-full p-4 rounded-lg border dark:border-neutral-800 border-neutral-400 dark:text-white text-[#1F2937] transition duration-300">
      <div class="flex flex-row items-center gap-2 relative">
-          <a href={data.web} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white   group">
+          <a href={data.web} target="_blank" rel="noreferrer" class="flex flex-row items-center gap-1 hover:dark:text-white   group">
                <h3 class="text-lg md:text-xl font-bold decoration-neutral-500 decoration-dotted underline-offset-[5px] group-hover:underline ">{data.title}</h3>
                <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px]  transition-transform duration-200 opacity-50"/>
           </a>
           <div class="ml-auto flex flex-row gap-3 relative">
                {
                     data.team !== undefined && data.team.length !== 1 && data.team !== null ? (
-                    <button onclick="mostrarTeamDiv(this)" id={'team_'+index} class="flex flex-row items-center gap-1  group">
+                    <button aria-label="buttonTeam" onclick="mostrarTeamDiv(this)" id={'team_'+index} class="flex flex-row items-center gap-1  group">
                     <Icon name="mdi:storm" class="dark:text-white opacity-50 hover:opacity-100 text-2xl"/>
 
                     </button>
                     <div  class="teamDiv absolute hidden top-[28px] p-1 px-4 bg-white right-0 dark:border-neutral-400 border-neutral-400 border dark:bg-neutral-900  flex-col gap-1 rounded-sm ">
                          <span class="font-bold text-sm text-center border-b">Team</span>
-                         <a href={'https://github.com/'+data.team[0]} target="_blank" class="flex flex-row cursor-pointer items-center gap-1 group-hover:dark:text-white group">
+                         <a href={'https://github.com/'+data.team[0]} target="_blank" rel="noreferrer" class="flex flex-row cursor-pointer items-center gap-1 group-hover:dark:text-white group">
                               <span class="text-sm font-semibold decoration-neutral-500 decoration-dotted underline-offset-[5px] group-hover:underline">{data.team[0]}</span>
                               <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-200 opacity-50"/>
                          </a>
 
-                         <a href={'https://github.com/'+data.team[1]} target="_blank" class="flex flex-row cursor-pointer items-center gap-1 group-hover:dark:text-white group">
+                         <a href={'https://github.com/'+data.team[1]} target="_blank" rel="noreferrer" class="flex flex-row cursor-pointer items-center gap-1 group-hover:dark:text-white group">
                               <span class="text-sm font-semibold decoration-neutral-500 decoration-dotted underline-offset-[5px] group-hover:underline">{data.team[1]}</span>
                               <Icon name="mdi:arrow-top-right" class="dark:text-white text-sm group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-200 opacity-50"/>
                          </a>
@@ -40,13 +40,13 @@ const lang = getLangFromUrl(Astro.url);
 
                {
                     data.api !== undefined && data.api !== ""&& data.api !== null ? (
-                         <a aria-label="api url" href={data.api} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
+                         <a aria-label="api url" href={data.api} target="_blank" rel="noreferrer" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
                               <Icon name="mdi:api" class="dark:text-white opacity-50 hover:opacity-100 text-2xl"/>
                          </a>
                     ) : null 
                }
 
-               <a aria-label="github url" href={data.url} target="_blank" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
+               <a aria-label="github url" href={data.url} target="_blank" rel="noreferrer" class="flex flex-row items-center gap-1 hover:dark:text-white hover:dark:text-opacity-50  group">
                     <Icon name="mdi:github" class="dark:text-white opacity-50 hover:opacity-100 text-2xl"/>
                </a>
           </div>

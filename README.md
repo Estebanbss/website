@@ -1,13 +1,13 @@
 <div align="center">
 
-<a href="https://estebanbss.dev" target="_blank">
+<a href="https://estebanbss.dev" target="_blank" rel="noreferrer">
 <img src="public/github_readme.png" alt="Screenshot" />
 </a>
 
 </p>
 
 <div align="center">
-    <a href="https://estebanbss.dev" target="_blank">
+    <a href="https://estebanbss.dev" target="_blank" rel="noreferrer">
         Website
     </a>
     <span>&nbsp;⁘&nbsp;</span>

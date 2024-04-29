@@ -7,10 +7,12 @@ import '../styles/main.css';
 interface Props {
     title: string;
     lang: string;
+    description: string;
+    keywords: string;
 
 }
 
-const { title, lang} = Astro.props;
+const { title, lang, description, keywords} = Astro.props;
 
 
 
@@ -20,19 +22,29 @@ const { title, lang} = Astro.props;
 <html class="font-dosis" lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Explora el portafolio de Esteban para ver sus proyectos destacados de desarrollo web. ¡Convierte tus ideas en realidad y déjate inspirar!" />
-          <meta name="keywords" content="Esteban, ImEsteban, Estebanbss.dev, Developer, Desarrollador, Frontend Developer, Desarrollador Frontend, Fullstack, Fullstack Developer, Desarrollador Fullstack, Portafolio Esteban, Esteban Barrera, Juan Esteban Portafolio, Esteban Barrera's Page, Esteban's page, Desarrollo web, web design, Web development"/>
-          <meta name="author" content="Esteban Barrera"/>
+		<meta name="description" content={description} />
+          <meta name="keywords" content={keywords}/>
+          <meta name="author" content="Estebanbss"/>
           <meta property="og:title" content={title}/>
-          <meta property="og:description" content="Explora el portafolio de Esteban para ver sus proyectos destacados de desarrollo web. ¡Convierte tus ideas en realidad y déjate inspirar!"/>
+          <meta property="og:description" content={description}/>
           <meta property="og:url" content="https://estebanbss.dev"/>
           <meta property="og:owners" content="Esteban Barrera"/>
           <meta property="og:image" content="/icon.svg"/>
+          <meta property="og:type" content="website"/>
+          <meta property="og:site_name" content={title}/>
+          <meta property:"og:image:width" content="1200"/>
+          <meta property:"og:image:height" content="630"/>
 		<meta name="viewport" content="width=device-width" />
           <meta name="theme-color" content="#031700"/>
           <meta name="robots" content="index, follow"/>
           <meta name="url" content="https://estebanbss.dev"/>
           <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:site" content="@estebanbss"/>
+          <meta name="twitter:creator" content="@estebanbss"/>
+          <meta name="twitter:title" content={title}/>
+          <meta name="twitter:description" content={description}/>
+          <meta name="twitter:image" content="/icon.svg"/>
+          <meta name="twitter:image:alt" content="Esteban Barrera"/>
           <meta name="audience" content="all"/>
           <meta name="language" content={lang}/>
           <meta name="revisit-after" content="1 day"/>
@@ -57,7 +69,7 @@ const { title, lang} = Astro.props;
           type="font/woff2"
           crossorigin
         />
-		<link media="all" rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link media="all" rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
@@ -67,9 +79,11 @@ const { title, lang} = Astro.props;
           <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
           bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(225,255,217,0.5),rgba(255,255,255,0.5))]
           dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(23,37,25,1),rgba(23,23,23,1))]"></div>
-          <Header/>
-          <slot />
-          <Footer/>
+
+               <Header/>
+               <slot />
+               <Footer/>
+
 	</body>
 </html>
 

@@ -2,10 +2,12 @@ export const ui = {
 
      en:{
      "lang":"English",
-     "site.title":"Estebanbss - FrontEnd, Backend, Angular, Typescript, C#",
+     "site.title":"Esteban Barrera - Full Stack Developer - Angular, Typescript, C#",
+     "site.description":"Discover Esteban's portfolio, where the fusion of passion for software development and creativity results in the crafting of innovative solutions. Explore his work now and be inspired! 🪴",
+     "site.keywords":"Esteban Barrera,tailwind, Full Stack Developer, Angular, Typescript, C#, Colombia, UX/UI design, Performance optimization, Frontend development, Backend development, Web applications, Work experience, Agile methodologies, GitHub collaboration, Innovation, Continuous improvement, Creative solutions, Programming, Agile development, Interface design",
      "hi.title": "Hey, Im Esteban 🌱",
-     "h2.first": "Full stack developer with a keen interest in",
-     "h2.second": "design, and optimizing performance.",
+     "h2.first": "Full Stack Developer from Colombia with +3 years of experience. I am passionate about ",
+     "h2.second": "design, performance optimization and contributing to projects.",
      "download.cv": "Download CV",
      "nav.projects":"Projects",
      "nav.experience":"Experience",
@@ -26,10 +28,12 @@ export const ui = {
 
      es:{
      "lang":"Español",
-     "site.title":"Estebanbss - FrontEnd, Backend, Angular, Typescript, C#",
+     "site.title":"Esteban Barrera - Desarrollador Full Stack - Angular, Typescript, C#",
+     "site.description":"Explora el portafolio de Esteban, donde la pasión por el desarrollo de software se combina con la creatividad para crear soluciones innovadoras. ¡Descubre su trabajo ahora! 🪴",
+     "site.keywords":"Esteban Barrera,tailwind, Desarrollador Full Stack, Angular, Typescript, C#, Colombia, Diseño UX/UI, Optimización del rendimiento, Desarrollo frontend, Desarrollo backend, Aplicaciones web, Experiencia laboral, Metodologías ágiles, Colaboración en GitHub, Innovación, Mejora continua, Soluciones creativas, Programación, Desarrollo ágil, Diseño de interfaz",
      "hi.title": "Hola, Soy Esteban 🌱",
-     "h2.first": "Desarrollador Full Stack con un gran interés en",
-     "h2.second": "diseño y optimización de rendimiento.",
+     "h2.first": "Desarrollador Full Stack de Colombia con más de 3 años de experiencia. Me apasiona el diseño ",
+     "h2.second": "la optimización del rendimiento y contribuir a proyectos.",
      "download.cv": "Descargar CV",
      "nav.projects":"Proyectos",
      "nav.experience":"Experiencia",
@@ -50,10 +54,12 @@ export const ui = {
 
      fr:{
      "lang":"Français",
-     "site.title":"Estebanbss - FrontEnd, Backend, Angular, Typescript, C#",
+     "site.title":"Esteban Barrera - Développeur Full Stack - Angular, Typescript, C#",
+     "site.description":"Découvrez le portfolio d'Esteban, où la passion pour le développement logiciel rencontre la créativité pour concevoir des solutions innovantes. Explorez son travail dès maintenant! 🪴",
+     "site.keywords": "Esteban Barrera,tailwind, Développeur Full Stack, Angular, Typescript, C#, Colombie, Conception UX/UI, Optimisation des performances, Développement frontend, Développement backend, Applications web, Expérience professionnelle, Méthodologies agiles, Collaboration sur GitHub, Innovation, Amélioration continue, Solutions créatives, Programmation, Développement agile, Conception d'interface",
      "hi.title": "Salut, Je suis Esteban 🌱",
-     "h2.first": "Développeur Full Stack avec un grand intérêt pour",
-     "h2.second": "le design et l'optimisation des performances.",
+     "h2.first": "Développeur Full Stack de Colombie avec plus de 3 ans d'expérience. Je suis passionné par la conception",
+     "h2.second": "l'optimisation des performances et la contribution à des projets.",
      "download.cv": "Télécharger CV",
      "nav.projects":"Projets",
      "nav.experience":"Expérience",

@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(lang);
+
+---
+
+<Layout   lang={lang} title={t("site.title")} description={t("site.description")} keywords={t("site.keywords")}>
+     <main class="flex min-h-[100vh] mb-auto justify-center  max-w-[95%] min-w-[95%]">
+
+     <div class="container justify-start items-center w-full flex flex-col max-w-4xl dark:text-white text-black flex-1 p-4">
+          <span>:(</span>
+          <h1>404</h1> 
+          <p>Not found</p>
+     
+     </div>
+ 
+     </main>
+</Layout>
+
+<script is:inline>
+const list = document.getElementById('list');
+list.style.display = 'none';
+</script>

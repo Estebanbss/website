@@ -15,7 +15,8 @@ export async function getStaticPaths() {
 
 ---
 
-<Layout  lang={lang} title={t("site.title")}>
+
+<Layout  lang={lang} title={t("site.title")} description={t("site.description")} keywords={t("site.keywords")}>
      <main class="flex justify-center max-w-[95%] min-w-[95%]">
           <div
                class="md:min-w-[760px] xl:min-w-[1150px] sm:max-w-[1150px] flex flex-col max-w-full"
@@ -29,8 +30,9 @@ export async function getStaticPaths() {
                     >
                          {t("hi.title")}
                     </h1>
+               
                     <p
-                         class="font-light text-base md:text-lg dark:[&>strong]:text-lime-500 [&>strong]:text-lime-600 [&>strong]:font-black min-w-fit min-h-[30px]"
+                         class="font-light text-base md:text-lg dark:[&>strong]:text-lime-500 [&>strong]:text-lime-600 [&>strong]:font-black min-w-[277px] max-w-[300px] sm:min-w-[590px] sm:max-w-[590px] min-h-[30px] md:min-w-[750px] md:max-w-[750px]"
                     >
                          {t("h2.first")}
                          <strong class=""
@@ -38,9 +40,11 @@ export async function getStaticPaths() {
                          >
                          {t("h2.second")}
                     </p>
+
+               
                     <a
                          href={t("link.cv")}
-                         target="_blank"
+                         target="_blank" rel="noreferrer"
                          class="rounded-full border w-fit p-1 px-4 bg-white z-40 bg-opacity-50 hover:bg-black hover:bg-opacity-10 cursor-pointer"
                          >{t("download.cv")}</a
                     >
