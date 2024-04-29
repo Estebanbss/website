@@ -6,20 +6,6 @@
          "**/.*",
          "**/node_modules/**"
        ],
-       "rewrites": [
-         {
-           "source": "/**",
-           "destination": "/index.html",
-           "trailingSlash": false
-
-         },
-         {
-           "source": "/**",
-           "destination": "/index.html",
-           "trailingSlash": false
-
-         }
-       ],
        "redirects": [
          {
            "source": "/cv",

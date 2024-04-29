@@ -1,0 +1,46 @@
+[debug] [2024-04-29T03:17:26.667Z] ----------------------------------------------------------------------
+[debug] [2024-04-29T03:17:26.669Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Esteban\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2024-04-29T03:17:26.670Z] CLI Version:   13.7.3
+[debug] [2024-04-29T03:17:26.670Z] Platform:      win32
+[debug] [2024-04-29T03:17:26.670Z] Node Version:  v22.0.0
+[debug] [2024-04-29T03:17:26.670Z] Time:          Sun Apr 28 2024 22:17:26 GMT-0500 (hora estándar de Colombia)
+[debug] [2024-04-29T03:17:26.670Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-29T03:17:26.743Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-29T03:17:26.743Z] > authorizing via signed-in user (juanesbs84@gmail.com)
+[debug] [2024-04-29T03:17:26.743Z] [iam] checking project website-eae40 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-04-29T03:17:26.745Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-eae40:testIamPermissions [none]
+[debug] [2024-04-29T03:17:26.745Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-eae40:testIamPermissions x-goog-quota-user=projects/website-eae40
+[debug] [2024-04-29T03:17:26.745Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-eae40:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-29T03:17:27.284Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-eae40:testIamPermissions 200
+[debug] [2024-04-29T03:17:27.284Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-eae40:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-29T03:17:27.285Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/website-eae40 [none]
+[debug] [2024-04-29T03:17:27.699Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/website-eae40 200
+[debug] [2024-04-29T03:17:27.699Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/website-eae40 {"projectId":"website-eae40","projectNumber":"482019177703","displayName":"website","name":"projects/website-eae40","resources":{"hostingSite":"website-eae40"},"state":"ACTIVE","etag":"1_e73da436-b7b5-4fd1-975e-f44eef9c9f93"}
+[info] 
+[info] === Deploying to 'website-eae40'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-04-29T03:17:27.705Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/website-eae40/versions [none]
+[debug] [2024-04-29T03:17:27.705Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/website-eae40/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-04-29T03:17:28.665Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/website-eae40/versions 200
+[debug] [2024-04-29T03:17:28.665Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/website-eae40/versions {"name":"projects/482019177703/sites/website-eae40/versions/2a0d10a3db1a7a04","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[website-eae40]: beginning deploy... 
+[info] i  hosting[website-eae40]: found 15 files in dist 
+[debug] [2024-04-29T03:17:28.673Z] [hosting] uploading with 200 concurrency
+[debug] [2024-04-29T03:17:28.706Z] [hosting] hash cache [ZGlzdA] stored for 15 files
+[debug] [2024-04-29T03:17:28.706Z] [hosting][hash queue][FINAL] {"max":28,"min":1,"avg":7.6,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":31}
+[debug] [2024-04-29T03:17:28.707Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/482019177703/sites/website-eae40/versions/2a0d10a3db1a7a04:populateFiles [none]
+[debug] [2024-04-29T03:17:28.707Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/482019177703/sites/website-eae40/versions/2a0d10a3db1a7a04:populateFiles {"files":{"/sitemap.xml":"0b4855767d516989dc5429f6bfdd552c540059b9a3b133398c3fe10b4edff89c","/fonts/dosis-latin-500-normal.woff":"5ab789cc14d46315ed87d917abd0420ef7093d532daff9b8d075df0d9c4e5188","/fonts/dosis-latin-700-normal.woff":"48d8da989c9caf15e741f2b4d441d1d4f2f75c8a866ad0eb6ed7b362d97b5bcc","/fonts/dosis-latin-800-normal.woff":"8bf23a8a0cf14b4149db23dbda3759328475b0e123b6477f59c5f7ac2651f7ba","/favicon.svg":"dddb325cab45d0d5e0286cee50d4931832e04d5f5a2702a7a4a29a8c1c5f65bb","/icon.svg":"06621bdcb4b16f9f7eeb67054e37ca26ce7593d61885fe2ba8ed4230dd7e2202","/404.html":"344e979148ea8859de3351987b4c70569069be11d4a9a5cdd81eec9b636d1bb5","/robots.txt":"0d0d4a4f13dc4530c6b137eb9912a26ce1c5788512b4331d156e5aba3703dd0e","/_astro/index.DTh1wXar.css":"8cedaf28a09e0708a7dd3ee447a46ab45f9a86cbe3bad1727aa8e9dd9214f764","/index.html":"95025a2c3f749c1c8a6c90cd11b8d69a60026049046df341e1ac1a55965ebfd9","/es/index.html":"95025a2c3f749c1c8a6c90cd11b8d69a60026049046df341e1ac1a55965ebfd9","/en/index.html":"c13ed707741ea3055eb9fb19fd3b281f7d1182f2aac6d9c00803f919a2cc7793","/fr/index.html":"4301dc6b09f5dc3ffaa550ffa1f48839ca030c3e1a959a26ffba7bbd47691a57","/github_readme.png":"3e9d8568c5acb2b0be5c46c02068fbe3f7eb42f3a37d2818538445087321e5d5","/73C14F7C.png":"222f66417cd5411350c2723e19c2defa11e2e1394c0d1d62f9cad672882e023b"}}
+[debug] [2024-04-29T03:17:28.986Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/482019177703/sites/website-eae40/versions/2a0d10a3db1a7a04:populateFiles 200
+[debug] [2024-04-29T03:17:28.986Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/482019177703/sites/website-eae40/versions/2a0d10a3db1a7a04:populateFiles {"uploadRequiredHashes":["95025a2c3f749c1c8a6c90cd11b8d69a60026049046df341e1ac1a55965ebfd9","c13ed707741ea3055eb9fb19fd3b281f7d1182f2aac6d9c00803f919a2cc7793","344e979148ea8859de3351987b4c70569069be11d4a9a5cdd81eec9b636d1bb5","4301dc6b09f5dc3ffaa550ffa1f48839ca030c3e1a959a26ffba7bbd47691a57"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files"}
+[debug] [2024-04-29T03:17:28.988Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/95025a2c3f749c1c8a6c90cd11b8d69a60026049046df341e1ac1a55965ebfd9 [none]
+[debug] [2024-04-29T03:17:28.988Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/95025a2c3f749c1c8a6c90cd11b8d69a60026049046df341e1ac1a55965ebfd9 [stream]
+[debug] [2024-04-29T03:17:28.989Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/c13ed707741ea3055eb9fb19fd3b281f7d1182f2aac6d9c00803f919a2cc7793 [none]
+[debug] [2024-04-29T03:17:28.989Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/c13ed707741ea3055eb9fb19fd3b281f7d1182f2aac6d9c00803f919a2cc7793 [stream]
+[debug] [2024-04-29T03:17:28.990Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/344e979148ea8859de3351987b4c70569069be11d4a9a5cdd81eec9b636d1bb5 [none]
+[debug] [2024-04-29T03:17:28.991Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/344e979148ea8859de3351987b4c70569069be11d4a9a5cdd81eec9b636d1bb5 [stream]
+[debug] [2024-04-29T03:17:28.992Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/4301dc6b09f5dc3ffaa550ffa1f48839ca030c3e1a959a26ffba7bbd47691a57 [none]
+[debug] [2024-04-29T03:17:28.992Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/website-eae40/versions/2a0d10a3db1a7a04/files/4301dc6b09f5dc3ffaa550ffa1f48839ca030c3e1a959a26ffba7bbd47691a57 [stream]
+[debug] [2024-04-29T03:17:28.993Z] [hosting][populate queue][FINAL] {"max":282,"min":282,"avg":282,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":288}
+[debug] [2024-04-29T03:17:28.993Z] [hosting] uploads queued: 4
