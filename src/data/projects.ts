@@ -16,6 +16,18 @@ export const projects: Project[] = [
           topics: [techs[1], techs[3], techs[4], techs[Object.values(techs).length-1], techs[5], techs[6], techs[7]],
           team: ["Estebanbss"],
      },
+     {
+          title: "moni",
+          description: {
+               en: "💰🤑 Manage your income in a simple way",
+               es: "💰🤑 Administra tus ingresos de manera sencilla",
+               fr: "💰🤑 Gérez vos revenus de manière simple"
+           },
+          url: "https://github.com/Estebanbss/moni",
+          web: "https://money-2f2ef.web.app/",
+          topics: [techs[1], techs[3], techs[4], techs[9]],
+          team: ["Estebanbss"],
+     },
 
      {
           title: "paroot-url",
